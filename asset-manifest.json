@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/knowingly-app/static/css/main.42aaadd9.chunk.css",
+    "main.js": "/knowingly-app/static/js/main.8585fa53.chunk.js",
+    "main.js.map": "/knowingly-app/static/js/main.8585fa53.chunk.js.map",
+    "runtime-main.js": "/knowingly-app/static/js/runtime-main.ad5deff9.js",
+    "runtime-main.js.map": "/knowingly-app/static/js/runtime-main.ad5deff9.js.map",
+    "static/css/2.54208fce.chunk.css": "/knowingly-app/static/css/2.54208fce.chunk.css",
+    "static/js/2.ab1f2a9b.chunk.js": "/knowingly-app/static/js/2.ab1f2a9b.chunk.js",
+    "static/js/2.ab1f2a9b.chunk.js.map": "/knowingly-app/static/js/2.ab1f2a9b.chunk.js.map",
+    "index.html": "/knowingly-app/index.html",
+    "static/css/2.54208fce.chunk.css.map": "/knowingly-app/static/css/2.54208fce.chunk.css.map",
+    "static/css/main.42aaadd9.chunk.css.map": "/knowingly-app/static/css/main.42aaadd9.chunk.css.map",
+    "static/js/2.ab1f2a9b.chunk.js.LICENSE.txt": "/knowingly-app/static/js/2.ab1f2a9b.chunk.js.LICENSE.txt",
+    "static/js/main.8585fa53.chunk.js.LICENSE.txt": "/knowingly-app/static/js/main.8585fa53.chunk.js.LICENSE.txt",
+    "static/media/ayo-ogunseinde-2.jpg": "/knowingly-app/static/media/ayo-ogunseinde-2.f4af8f2c.jpg",
+    "static/media/paper-dashboard.scss?v=1.3.0": "/knowingly-app/static/media/nucleo-icons.ec16bc4c.woff2"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ad5deff9.js",
+    "static/css/2.54208fce.chunk.css",
+    "static/js/2.ab1f2a9b.chunk.js",
+    "static/css/main.42aaadd9.chunk.css",
+    "static/js/main.8585fa53.chunk.js"
+  ]
+}
