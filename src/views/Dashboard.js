@@ -35,7 +35,7 @@ import data from "../data.json";
 
 function Dashboard() {
   const feedLoad = () => {
-    let dataSource = askMode ? data.myQuestions : data.othersQuestions;
+    let dataSource = data.othersQuestions;
     let questions = [];
     for (let question of dataSource) {
       questions.push(
@@ -108,6 +108,7 @@ function Dashboard() {
     return questions;
   };
   const [askMode, setAskMode] = React.useState(false);
+  const [openQuestion, setOpenQuestion] = React.useState(false);
   const [dropdownOpen, setDropdownOpen] = React.useState(false);
   const dropdownToggle = (e) => {
     setDropdownOpen(!dropdownOpen);
@@ -115,34 +116,134 @@ function Dashboard() {
   return (
       <>
         <div className="content">
+          {openQuestion?<Row>
+            <Col lg={{size: 8, offset: 1}} md={{size: 8, offset: 1}} sm="12">
+              <Card className="card-stats">
+                <CardBody>
+                  <Row>
+                    <Col md="1" xs="1">
+                      <div className="avatar" style={{width: "50px", height: "50px"}}>
+                        <img
+                            alt="..."
+                            className="img-circle img-no-padding img-responsive"
+                            src={
+                              require("assets/img/faces/ayo-ogunseinde-2.jpg")
+                                  .default
+                            }
+                        />
+                      </div>
+                    </Col>
+                    <Col md="11" xs="11">
+                     <form>
+                        <InputGroup>
+                          <Input placeholder="Question Title" />
+                          <InputGroupAddon addonType="append">
+                            <InputGroupText>
+                              <i className="fas fa-pencil-alt" />
+                            </InputGroupText>
+                          </InputGroupAddon>
+                        </InputGroup>
+
+                        <InputGroup>
+                          <Input placeholder="Describe Your Question" />
+                          <InputGroupAddon addonType="append">
+                            <InputGroupText>
+
+                            </InputGroupText>
+                          </InputGroupAddon>
+                        </InputGroup>
+                        <Button
+                            className="btn btn-success"
+                        >Submit
+                        </Button>
+                      </form>
+                    </Col>
+                  </Row>
+                </CardBody>
+                <CardFooter style={{direction: "rtl"}}>
+                  <div className="stats" style={{display: "inline-block", margin: "20px"}}>
+                    Booking a Meeting
+                    <i className="fas fa-calendar-plus" />
+                  </div>
+                  <div className="stats" style={{display: "inline-block", margin: "20px"}}>
+                    Attachments
+                    <i className="fas fa-paperclip" />
+                  </div>
+                  <div className="stats" style={{display: "inline-block", margin: "20px"}} onClick={() => setOpenQuestion(false)}>
+                    <i className="nc-icon nc-minimal-up" />
+                  </div>
+                </CardFooter>
+              </Card>
+            </Col>
+          </Row>:<Row>
+            <Col lg={{size: 8, offset: 1}} md={{size: 8, offset: 1}} sm="12">
+              <Card className="card-stats">
+                <CardBody>
+                  <Row>
+                    <Col md="1" xs="1">
+                      <div className="avatar" style={{width: "50px", height: "50px"}}>
+                        <img
+                            alt="..."
+                            className="img-circle img-no-padding img-responsive"
+                            src={
+                              require("assets/img/faces/ayo-ogunseinde-2.jpg")
+                                  .default
+                            }
+                        />
+                      </div>
+                    </Col>
+                    <Col md="11" xs="11">
+                      <form>
+                        <InputGroup onClick={()=> setOpenQuestion(true)}>
+                          <Input placeholder="Ask anything here ..." />
+                          <InputGroupAddon addonType="append">
+                            <InputGroupText>
+                              <i className="fas fa-pencil-alt" />
+                            </InputGroupText>
+                          </InputGroupAddon>
+                        </InputGroup></form></Col></Row></CardBody></Card></Col></Row>}
+          <Row>
+            <Col lg={6} md={6} sm={6}>
+              <div className="typography-line">
+                <i className="nc-icon nc-key-25" />
+                Questions for you
+              </div>
+            </Col>
+            <Col lg={{size: 2, offset: 2}} md={{size: 2, offset: 2}}>
+                <Dropdown
+                    isOpen={dropdownOpen}
+                    toggle={(e) => dropdownToggle(e)}
+                >
+                  <DropdownToggle caret nav>
+                    Sort By
+                  </DropdownToggle>
+                  <DropdownMenu>
+                    <DropdownItem tag="a">Most Relevant</DropdownItem>
+                    <DropdownItem tag="a">Oldest</DropdownItem>
+                    <DropdownItem tag="a">Popular</DropdownItem>
+                  </DropdownMenu>
+                </Dropdown>
+              </Col>
+          </Row>
           <Row>
             <Col lg={12} md={12} sm={12}>
               <Row >
-
                 <Col lg={{size: 8, offset: 1}} md={{size: 8, offset: 1}} sm="12">
-                  <Card>
-                    <CardHeader>
-                      <Dropdown
-                          isOpen={dropdownOpen}
-                          toggle={(e) => dropdownToggle(e)}
-                      >
-                        <DropdownToggle caret nav>
-                          Sort By
-                        </DropdownToggle>
-                        <DropdownMenu>
-                          <DropdownItem tag="a">Most Relevant</DropdownItem>
-                          <DropdownItem tag="a">Oldest</DropdownItem>
-                          <DropdownItem tag="a">Popular</DropdownItem>
-                        </DropdownMenu>
-                      </Dropdown>
-                    </CardHeader>
-                  </Card>
 
-                  {feedLoad()}
+
+                  {feedLoad(3)}
                 </Col>
 
               </Row>
             </Col>
+          </Row>
+          <Row>
+            <Button
+                className="btn"
+                color="primary"
+            >
+              Explore More
+            </Button>
           </Row>
         </div>
       </>

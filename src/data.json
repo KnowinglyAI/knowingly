@@ -1,5 +1,16 @@
 {
-  "othersQuestions": [
+  "users": [{
+    "id": 1,
+    "name": "Ali Moezi",
+    "photo": "mike.jpg",
+    "about": "BLAH BLAH AHAHAHHAHHJGYT"
+  },{
+    "id": 1,
+    "name": "Ali Moezi",
+    "photo": "joe-gardner-1.jpg",
+    "about": "BLAH BLAH AHAHAHHAHHJGYT"
+  }],
+  "myQuestions": [
     {
       "userId": 5,
       "firstName": "jone",
@@ -41,13 +52,122 @@
       "photo": "erik-lucatero-1.jpg"
     }
   ],
-  "myQuestions": [
+  "othersQuestions": [
     {
       "userId": 1,
       "firstName": "Krish",
       "lastName": "Lee",
-      "title": "How can I parse through local JSON file in React js?",
-      "text": "How can I parse through a JSON file retrieving all its data and using it in my code?\n\nI've tried importing the file and just tried console logging it, but all it does is print Object {}:",
+      "title": "An error in our app at the purchasing stage",
+      "text": "Could anyone point me in the right direction to which team I should report this error to, plaese see the attached image",
+      "time": "1d",
+      "tags": ["app","purchase","devOps"],
+      "photo": "ayo-ogunseinde-1.jpg"
+    },
+    {
+      "userId": 1,
+      "firstName": "Victor",
+      "lastName": "Lui",
+      "title": "Our mobile strategy is updated, which teams are affected and how to support them?",
+      "text": "attached you can find the link to the latest information. We would like to help as many teams who are affected with new decisions. Please make this question reaches as many teams that can be affected by this and can help us in our rodemap.:",
+      "time": "1d",
+      "tags": ["product","mobile","app"],
+      "photo": "ayo-ogunseinde-1.jpg"
+    },
+    {
+      "userId": 1,
+      "firstName": "Krish",
+      "lastName": "Lee",
+      "title": "What technical certifications do you need to push the new feature live?",
+      "text": "We have done the test process and NDA approvals and risk assesmnet so far. But seems like other markets like Germany require certificates. anyone knows?  ",
+      "time": "1d",
+      "tags": ["legal","app","certificates"],
+      "photo": "ayo-ogunseinde-1.jpg"
+    },
+    {
+      "userId": 1,
+      "firstName": "Krish",
+      "lastName": "Lee",
+      "title": "When should you use a t-test vs a z-test?",
+      "text": " We usually use a t-test when you don’t know the population variance and have a small sample size. A Z-test is a hypothesis test with a normal distribution that uses a z-statistic. A z-test is used when you know the population variance or if you don’t know the population variance but have a large sample size. However in our current analysis we have some unclarities due to sample size.",
+      "time": "1d",
+      "tags": ["analytics","data"],
+      "photo": "ayo-ogunseinde-1.jpg"
+    },
+    {
+      "userId": 1,
+      "firstName": "Krish",
+      "lastName": "Lee",
+      "title": "n our app, we have automatic payment *after* payment due date: why?",
+      "text": "Why would the automatic payment be set to happen three days after the payment due date? Shouldn't it be on or before the due date? This makes me worry about possible penalties for late payment etc, though it would be surprising for the official system to have a flaw like this.any one knows?",
+      "time": "1d",
+      "tags": ["app","payment"],
+      "photo": "ayo-ogunseinde-1.jpg"
+    },
+    {
+      "userId": 1,
+      "firstName": "Krish",
+      "lastName": "Lee",
+      "title": "Latest in house logistics process in regards to companies out of europe in US ?",
+      "text": "We are launching new engines by end of 2023, and by end of this year we are having 15 engines to be tested in Chicago. We could not find the a standard process in TB system. Anyone knows what is the process including packaging?",
+      "time": "1d",
+      "tags": ["Logostics","Euro5engines","US"],
+      "photo": "ayo-ogunseinde-1.jpg"
+    },
+    {
+      "userId": 1,
+      "firstName": "Krish",
+      "lastName": "Lee",
+      "title": "Difference between conventional VM and container based microservicess?",
+      "text": "What are the drawbacks of conventional VM over container based microservices. You may mention some bold points for further discussions. On the other hand in production server what kind of container engine mostly used i.e. docker, podman etc. and the host system operating system too.",
+      "time": "1d",
+      "tags": ["engine","developement"],
+      "photo": "ayo-ogunseinde-1.jpg"
+    },
+    {
+      "userId": 1,
+      "firstName": "Krish",
+      "lastName": "Lee",
+      "title": "Adaptive Input and Parameter Estimation with Application to Engine Torque Estimation ?",
+      "text": "What are the methods for estimating the engine torque other than the above",
+      "time": "Dec 29, 2021",
+      "tags": ["jquery","javascript"],
+      "photo": "ayo-ogunseinde-1.jpg"
+    },
+    {
+      "userId": 1,
+      "firstName": "Krish",
+      "lastName": "Lee",
+      "title": "How to determine CI Engine combustion Characteristics through simulation?",
+      "text": "I have tried to simulate combustion in a Diesel engine with FLUENT, and I want to determine combustion characteristics in compression ignition engine and parameters such as in-cylinder pressure, temperature, heat release rate, NOx emission, UBHC, etc.I appreciate if someone help me find out following issue: How can I get detailed engine dimensions? How to incorporate crank angle and valve timing information to FLUENT (Not in ANSYS-IC engine module) Which models should activate to solve this problem in FLUENT? How to give motion to piston and lift of valve?Any other software which can help me out and calculate all information as required:",
+      "time": "1d",
+      "tags": ["engine","developement","R&D","Emmision","FLUENT"],
+      "photo": "ayo-ogunseinde-1.jpg"
+    }, {
+      "userId": 1,
+      "firstName": "Krish",
+      "lastName": "Lee",
+      "title": "How to calculate the power output and the efficiency of a Stirling engine?",
+      "text": "ello everyone, I hope that you are OK, I work on Stirling engines and when I want to calculate the power output and the efficiency of the Stirling engine, I find in the litterature that power = Wtotal*frequency, but I think that we must not do the Wtotal since in the power we must calculate just what we wont which is Wexpansion but Wtotal = Wcompression + Wexpansion???? Can you help me on this please? I will be very thankfull.",
+      "time": "1d",
+      "tags": ["engine","developement","R&D"],
+      "photo": "ayo-ogunseinde-1.jpg"
+    },
+    {
+      "userId": 1,
+      "firstName": "Krish",
+      "lastName": "Lee",
+      "title": "LHV and A/F for DME, OME1, and biodiesel??",
+      "text": "I am looking for low heat values and air-fuel stoichiometric ratios for biofuels--in particular, values for dimethyl ether, mono oxymethylene dimethyl ether (OME1), and for biodiesel. I will check performance of their blends in an engine specifically tailored to operate efficiently with these fuels.",
+      "time": "Dec 15, 2021",
+      "tags": ["engine","developement","R&D"],
+      "photo": "ayo-ogunseinde-1.jpg"
+    },
+    {
+      "userId": 1,
+      "firstName": "Krish",
+      "lastName": "Lee",
+      "title": "How can I plot the engine order (EO) lines in a Campbell diagram? If I know the modes, how to plot the forward and backward whirl (FW/BW) modes??",
+      "text": "I am working on a simple rotor disc model. I am aware of how to use software plotting. But I need the fundamental theory behind the Campbell diagram and how to plot the engine order lines. Please share your inputs. Regards.",
       "time": "1d",
       "tags": ["jquery","javascript"],
       "photo": "ayo-ogunseinde-1.jpg"
@@ -56,13 +176,151 @@
       "userId": 1,
       "firstName": "Krish",
       "lastName": "Lee",
-      "title": "How can I send an email from company mailbox?",
-      "text": "Fixing dead flat is a bit trickier but pairs of countersunk machine screws in the top deck with either aluminium plates and nuts forming a bridge under each rail you're attaching to, or the backing plates from the U-bolts I linked above, again with nuts.m",
+      "title": "Code for raster preparation in R or Google Earth Engine?",
+      "text": "I need to prepare a new raster file having maximum pixel value (for each pixels) selected from a stack of raster files. If you have this code in R or Google earth engine, please do suggest me the appropriate code. Thank you.",
       "time": "1d",
-      "tags": [
-        "jquery",
-        "javascript"
-      ],
+      "tags": ["jquery","javascript"],
+      "photo": "ayo-ogunseinde-1.jpg"
+    },
+    {
+      "userId": 1,
+      "firstName": "Krish",
+      "lastName": "Lee",
+      "title": "How to run validation in AREA2 (Google Earth Engine) for classifications with more than three labels?",
+      "text": "Dear all, I have been facing problems using the AREA2 tool implemented in Google Earth Engine to validate a map with many labels. My data is labeled into 16 different classes, and the GEE crashes when I use all labels. It works fine with three classes (labels), for example. But, with 16 classes, it crashes.Have you ever faced this problem when validating maps with that many labels? In case of yes, do you have a trick to make it work? Thanks in advance.",
+      "time": "1d",
+      "tags": ["jquery","javascript"],
+      "photo": "ayo-ogunseinde-1.jpg"
+    },
+    {
+      "userId": 1,
+      "firstName": "Krish",
+      "lastName": "Lee",
+      "title": "What are the main parameters that need to be evaluated for the engine performance analysis of a biofuel?",
+      "text": "Also what should be the ideal conditions of engine performance in regards to its output and emission analysis?",
+      "time": "1d",
+      "tags": ["jquery","javascript"],
+      "photo": "ayo-ogunseinde-1.jpg"
+    },
+    {
+      "userId": 1,
+      "firstName": "Krish",
+      "lastName": "Lee",
+      "title": "Regarding IC Engine Noise?",
+      "text": "I am Doing Research on condition monitoring of IC Engine. For that, I have taken vibration data on different parts of the engine to predict the overall vibration of the engine.and also I have taken the noise of the engine using two microphones, i have recorded the noise of the engine.my problem is that how to separate the individual noise of the engine. for example to combustion noise of the engine. kindly provide me a solution.",
+      "time": "1d",
+      "tags": ["jquery","javascript"],
+      "photo": "ayo-ogunseinde-1.jpg"
+    },
+    {
+      "userId": 1,
+      "firstName": "Krish",
+      "lastName": "Lee",
+      "title": "Why air is not preferred instead of engines coolant in recovering engine waste heat by TEMs?",
+      "text": "Greeting, I would appreciate you if you help me to find the answer of this question: however ambient air is cooler than engine coolant but Why it is not preferred instead of engine's coolant in recovering engine waste heat by TEMs (Thermoelectric materials )..",
+      "time": "1d",
+      "tags": ["jquery","javascript"],
+      "photo": "ayo-ogunseinde-1.jpg"
+    },
+    {
+      "userId": 1,
+      "firstName": "Krish",
+      "lastName": "Lee",
+      "title": "Should I notify the user that the thread owner deleted their post?",
+      "text": "We are working on JP features in the app domain that works like a forum but not exactly. Here, users can create their content of threads while any user can add their posts to this thread. However, the thread creator has editorial rights and all action controls on the thread so that, they can delete posts of other users. Also, the creator can open/close the thread at anytime. The idea is, the creator of the thread is expected to put most of the posts in the thread but if they want and permit, others can contribute the thread too. The question is: Whenever a thread creator deletes a single or multiple posts that contributors added to the thread, should we send a notification to the user who posted it that their post was deleted by the thread owner?",
+      "time": "1d",
+      "tags": ["UX","Interactiondesign","uxdesign"],
+      "photo": "ayo-ogunseinde-1.jpg"
+    },
+    {
+      "userId": 1,
+      "firstName": "Krish",
+      "lastName": "Lee",
+      "title": "What is the value to the user of having *open* and *closed* status for questions on a Forum?",
+      "text": "I am creating a Question and Answer forum for a client and am thinking twice about including open closed status to questions...as opposed to having these conversations just pan out and have them all be open forever Originally, I would think the Open / Answered / Closed status is the first thing responders use as an indicator to decide which questions to answer first. I.e. Give first priority to unanswered questions. But on the other hand, I have a voting mechanism (like SE's) that should sort out the best answers from the worst at any point in time. And I have a notification system that notifies all the community whenever a question has been posted...so everybody hast a list of pending questions And I have a colleague that claims that having the different question status would add too much complexity to the forum interaction *how does the asker thank the responder?* With an upvote or saying the answer is correct?).I know this might sound like an obvious question. But I am trying to figure out if there are any additional benefits for the open / answered / closed status for questions. thanks!.",
+      "time": "1d",
+      "tags": ["UX","Interactiondesign","uxdesign","forum"],
+      "photo": "ayo-ogunseinde-1.jpg"
+    },
+    {
+      "userId": 1,
+      "firstName": "Krish",
+      "lastName": "Lee",
+      "title": "AJAX loading vs. *hardcoded* comments - is there any advantage of one above the other?",
+      "text": "Because of certain reasons, I'm sometimes tied to an extremely slow internet connection. What I realized with this, is that certain sites (for example, any subdomain of blog.hu) works in a way that needs a certain part of the site be loaded before comments are loaded too. I assume it's because of an AJAX operation, as the comments themselves are not visible within the HTML file. In contrast, forum engines, such as vBulletin are often free from AJAX, meaning that when a thread's HTML is loaded, every comment in it are *hardcoded*, meaning that even if the *fancy parts* (CSS, images and so on) are not loaded, I can already read the comments.My needs are very special though, so I'm interested - is there any general UX advantage of any of these?",
+      "time": "1d",
+      "tags": ["UX","Interactiondesign","uxdesign","blog","comments"],
+      "photo": "ayo-ogunseinde-1.jpg"
+    },
+    {
+      "userId": 1,
+      "firstName": "Krish",
+      "lastName": "Lee",
+      "title": "Why do IRC (or other chat protocol) logs scroll up with time when forums usually scroll down with time?",
+      "text": "Traditional forums -- or even modern social networks like Twitter -- typically have their latest posts at the top of the page, whereas chat protocols like IRC, Skype, or AIM have their latest messages at the bottom of the client. Why do they do things differently? This is not a duplicate of When should a timeline go from top to bottom?, as I'm asking about about an established convention, not for advice about implementing a UI myself.",
+      "time": "1d",
+      "tags": ["Interactiondesign","uxdesign","blog"],
+      "photo": "ayo-ogunseinde-1.jpg"
+    },
+    {
+      "userId": 1,
+      "firstName": "Krish",
+      "lastName": "Lee",
+      "title": "What are the latest Concepts in Forum/Conversation UX Designs?",
+      "text": "We're researching the latest paradigms on 'conversation' (topic/thread/comment) UX designs that advance considerably from the 'old' forum models. IOW, what are some recent UI patterns for conversations that break from the traditional 'forum' UX? Can anyone suggest designs, sources, examples, etc of these? EDIT: To be more specific, we are building a system where part of it implements a conversation 'forum' whose content is structured along the familiar lines of 'topics'->threads started by users under a topic->comments by others under each particular thread. I have an image of a random forum along these lines below. Of course we all know about these age old forums UI/UX that are stratified along the same lines as above. We hate to mimic those and would like to implement a NEW and BETTER UX for our users. What is the modern state of affairs, and does anyone know of examples of new and FUNCTIONAL designs they can share?",
+      "time": "1d",
+      "tags": ["Interactiondesign","uxdesign","blog"],
+      "photo": "ayo-ogunseinde-1.jpg"
+    },
+    {
+      "userId": 1,
+      "firstName": "Krish",
+      "lastName": "Lee",
+      "title": "How many mockups do you typically do for a responsive bootstrap design?",
+      "text": "I am scoping a responsive project and thinking it will need views spanning from mobile to desktop. I am just wanting to confirm if it is necessary/helpful to do mockups for all 4 sizes (Extra small devices (phones, up to 480px), Small devices (tablets, 768px and up), Medium devices (desktops, 992px and up), and Large devices (large desktops, 1200px and up)?",
+      "time": "1d",
+      "tags": ["responsive","bootstrap","web","UI"],
+      "photo": "ayo-ogunseinde-1.jpg"
+    },
+    {
+      "userId": 1,
+      "firstName": "Krish",
+      "lastName": "Lee",
+      "title": "UX & Agile: What criteria could change the complexity of a UX user story?",
+      "text": "I'm part of a cross functional dev team, we are applying Agile and also we are trying to adopt UX. Now, we have a difficult moment to estimate the UX user stories. What criteria can be involved to estimate the complexity points? Also I'm interested in listening to other similar experiences (UX Designers that apply Agile).I will clarify my context ^^: My team (formed by 4 Dev, 2 QA, 4 Business Analysts, 1 UX Designer) are developing applications that are used internal by employees. Usually a business request was firstly analysed by the Business Analysts, but now we want to improve the experience of our users and also make research in this scope (here we want to intergrate the UX Designer role). We want to bring the design process before starting the developing one and this UX activity to be also marked in our backlog. For example this sprint we created a UX Research user story with the purpose to improve the way that users search for a document inside of one our apps (the tasks that were included in this user story: to create a research plan, run interviews, run usability tests, synthetize data). The estimation of this user story was made by our *inside feeling*, but now we want to define some criteria (for example when we estimate a development user story our criteria are the time, rank of unknown, risks, knowledge level). Also we can't mark this activity in a *sprint zero* because the journey between research and a tested prorototype can take months in some complex situations.",
+      "time": "1d",
+      "tags": ["responsive","bootstrap","agile"],
+      "photo": "ayo-ogunseinde-1.jpg"
+    },
+    {
+      "userId": 1,
+      "firstName": "Krish",
+      "lastName": "Lee",
+      "title": "Best practices for technically executing AB testing on ecommerce site?",
+      "text": "I am working on a site redesign for my company's ecommerce site. We sell access to upcoming and recorded webinars. As a part of this redesign, I have recommended a new product strategy in which webinars can be bought from their product pages using an add to cart button. Currently, the product pages have 5 radio buttons indicating each different type of webinar access the customer can purchase (Longer webinar access, shorter webinar access, and CD-ROM copy to name a few).My redesigned product page has just an add to cart button with the remaining *add-ons* displayed in the add to cart confirmation popup where they can be added to the webinar purchase. I'm not sure if displaying the add-ons on the detail page is the way to go or if they should be presented in a add to cart pop-up (to reduce clutter and excess decision points at the point of ATC). Now my question is, how would I work with an IT dept to deploy a test like this that depends on backend code to generate the different experiences and how would the test be executed with our testing platform, Adobe Target. Thanks in advance. Happy to clarify any questions or comments.",
+      "time": "1d",
+      "tags": ["agile","abtesting","productdevelopement"],
+      "photo": "ayo-ogunseinde-1.jpg"
+    },
+    {
+      "userId": 1,
+      "firstName": "Krish",
+      "lastName": "Lee",
+      "title": "How does Design Thinking, Agile and Lean UX work together?",
+      "text": "I have become confused on the different processes involved between Design Thinking, Agile and UX Lean. I recently read an article that tried to explain how these processes work together as I wanted to check if I have understood these correctly. The article stated that a UI/UX designer will first run through their process of Design thinking, in order to provide the developers the correct information to build. For example a website. Once the developers start to build, they will follow a agile process, building aspects of the project in stages/sprints. The results of these sprints are then further tested and feedback is given to the developers to implement, which is how the UI/UX designer is then part of the Agile process.Is this correct? If so, how does Lean UX fall into this explanation?",
+      "time": "1d",
+      "tags": ["agile","leanux","design-thinking"],
+      "photo": "ayo-ogunseinde-1.jpg"
+    },
+
+    {
+      "userId": 1,
+      "firstName": "Krish",
+      "lastName": "Lee",
+      "title": "Are you interested to a collaborative work on the following subject: Big Data and Stochastic Model??",
+      "text": "My essay is an attempt to answer the following : « Is the data economy, then, destined to benefit only a few elite firms? » Apparently that would be the issue till now. What are available tools to avoid this false target ? Reference to my essay on Stochastic Models in particular the section « Handling human social technical dimension; in particular man-system interface including positioning technology at man services » you may find guidelines to produce these tools and make BIG DATA exploitable by large majority of users : 1. Engine should trace “player” behaviour, evaluate its capabilities and quickly meet its needs. 2. Immersion generated by simulation enables training and experimentation of behaviour strategies, in particular learning “by doing”. 3. Engine should use following resources : 3.1. Tools to be customized by trainers. 3.2. Applied standards. 3.3. New learning approaches discovery through obtained results, whether these approaches are positive or negative, in the sense of improving technology performance of assembled prototypes. 4. How SPDF (Standard Process Description Format) may produce a universal engine to run the stochastic model ? 4.1. SPDF consists of two parts : 4.1.1. Message structured-data part (including semantics) and, 4.1.2. Process description part (with higher level of semantics). 4.2. Two key outputs of the SPDF research will be a process description specification and framework for the extraction of semantics from legacy systems. 4.2.3. Note that : a)The more we may have semantic rules the more unpredictable events are controlled. b) Acquired knowledge to elaborate semantic rules for unpredictable events requires many occurrences of the stochastic model. c) Convergence shall not be reached until getting more qualitative semantic rules. d) Performing dynamically a given scenario is the goal of the proposed messaging system.",
+      "time": "1d",
+      "tags": ["SPDF","Bigdata","economy"],
       "photo": "ayo-ogunseinde-1.jpg"
     }
   ],
