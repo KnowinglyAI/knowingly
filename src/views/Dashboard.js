@@ -76,6 +76,32 @@ function Dashboard() {
                   </Button>
                 </Col>
               </Row>
+              <Row style={{justifyContent: "space-evenly"}}>
+                <Button
+                    className="btn btn-light"
+                    style={{backgroundColor: "#f8f9fa", borderColor: "#f8f9fa", color: "#212529"}}
+                >Like
+                  <i className="fa fa-thumbs-up" />
+                </Button>
+                <Button
+                    className="btn btn-light"
+                    style={{backgroundColor: "#f8f9fa", borderColor: "#f8f9fa", color: "#212529", borderRadius: "50%"}}
+                >+1
+                </Button>
+                <Button
+                    className="btn btn-light"
+                    style={{backgroundColor: "#f8f9fa", borderColor: "#f8f9fa", color: "#212529"}}
+                >Refer
+                  <i className="fa fa-star" />
+                </Button>
+
+                <Button
+                    className="btn btn-success"
+                >Answer
+                  <i className="nc-icon nc-check-2" />
+                </Button>
+
+              </Row>
             </CardBody>
           </Card>);
     }

@@ -19,6 +19,7 @@
 import React from "react";
 
 // reactstrap components
+// reactstrap components
 import {
   Button,
   Card,
@@ -28,123 +29,164 @@ import {
   Table,
   Row,
   Col,
+  InputGroup,
+  Input,
+  InputGroupAddon,
+  InputGroupText,
+  CardFooter,
+  Dropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
 } from "reactstrap";
+import data from "../data";
 
 function Upgrade() {
+  const feedLoad = () => {
+    let dataSource = askMode ? data.myQuestions : data.othersQuestions;
+    let questions = [];
+    for (let question of dataSource) {
+      questions.push(
+          <Row style={{marginBottom: "24px", borderRadius: "50px", borderBottom: "#f4f3ef 1px solid"}}>
+            <Col md="2" xs="2">
+              <div className="avatar" style={{borderRadius: 0, width: "45px", height: "45px"}}>
+                <img
+                    alt="..."
+                    className="img-circle img-no-padding img-responsive"
+                    src={
+                      require("assets/img/faces/" + question.photo)
+                          .default
+                    }
+                />
+              </div>
+            </Col>
+            <Col md="7" xs="7">
+              <strong>{question.title}</strong> <br />
+              <span className="text-muted">
+                          <small>{question.time + " . by " + question.lastName}</small>
+                        </span> <br/>
+              <span>{question.text}</span>
+              <br />
+              <span className="text-muted">
+                          <small>23 likes & 5 promotions</small>
+                        </span>
+            </Col>
+            <Col className="text-right" md="3" xs="3">
+              <Button
+                  className="btn-round btn-icon"
+                  color="success"
+                  outline
+                  size="sm"
+              >
+                <i className="fa fa-ellipsis-v" />
+              </Button>
+            </Col>
+          </Row>);
+    }
+    return questions;
+  };
+  const [askMode, setAskMode] = React.useState(true);
+  const [dropdownOpen, setDropdownOpen] = React.useState(false);
+  const dropdownToggle = (e) => {
+    setDropdownOpen(!dropdownOpen);
+  };
   return (
-    <>
-      <div className="content">
-        <Row>
-          <Col className="ml-auto mr-auto" md="8">
-            <Card className="card-upgrade">
-              <CardHeader className="text-center">
-                <CardTitle tag="h4">Paper Dashboard PRO</CardTitle>
-                <p className="card-category">
-                  Are you looking for more components? Please check our Premium
-                  Version of Paper Dashboard PRO.
-                </p>
-              </CardHeader>
-              <CardBody>
-                <Table responsive>
-                  <thead>
-                    <tr>
-                      <th />
-                      <th className="text-center">Free</th>
-                      <th className="text-center">PRO</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>Components</td>
-                      <td className="text-center">16</td>
-                      <td className="text-center">160</td>
-                    </tr>
-                    <tr>
-                      <td>Plugins</td>
-                      <td className="text-center">4</td>
-                      <td className="text-center">13</td>
-                    </tr>
-                    <tr>
-                      <td>Example Pages</td>
-                      <td className="text-center">7</td>
-                      <td className="text-center">27</td>
-                    </tr>
-                    <tr>
-                      <td>Login, Register, Pricing, Lock Pages</td>
-                      <td className="text-center">
-                        <i className="nc-icon nc-simple-remove text-danger" />
-                      </td>
-                      <td className="text-center">
-                        <i className="nc-icon nc-check-2 text-success" />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        DataTables, VectorMap, SweetAlert, Wizard,
-                        jQueryValidation, FullCalendar etc...
-                      </td>
-                      <td className="text-center">
-                        <i className="nc-icon nc-simple-remove text-danger" />
-                      </td>
-                      <td className="text-center">
-                        <i className="nc-icon nc-check-2 text-success" />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Mini Sidebar</td>
-                      <td className="text-center">
-                        <i className="nc-icon nc-simple-remove text-danger" />
-                      </td>
-                      <td className="text-center">
-                        <i className="nc-icon nc-check-2 text-success" />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Premium Support</td>
-                      <td className="text-center">
-                        <i className="nc-icon nc-simple-remove text-danger" />
-                      </td>
-                      <td className="text-center">
-                        <i className="nc-icon nc-check-2 text-success" />
-                      </td>
-                    </tr>
-                    <tr>
-                      <td />
-                      <td className="text-center">Free</td>
-                      <td className="text-center">From $49</td>
-                    </tr>
-                    <tr>
-                      <td className="text-center" />
-                      <td className="text-center">
-                        <Button
-                          className="btn-round disabled"
-                          color="default"
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          Current Version
-                        </Button>
-                      </td>
-                      <td className="text-center">
-                        <Button
-                          className="btn-round"
-                          color="primary"
-                          href="https://www.creative-tim.com/product/paper-dashboard-2-pro?ref=pd-free-upgrade-live"
-                          rel="noopener noreferrer"
-                          target="_blank"
-                        >
-                          Upgrade to PRO
-                        </Button>
-                      </td>
-                    </tr>
-                  </tbody>
-                </Table>
-              </CardBody>
-            </Card>
-          </Col>
-        </Row>
-      </div>
-    </>
+      <>
+        <div className="content">
+          <Row>
+            {/*<Col lg={{size: 2, offset: 1}} md={{size: 2, offset: 1}} sm={3}>*/}
+            {/*  <div className="button-container" style={{marginTop: "50px"}}>*/}
+            {/*    <Button color="default" block className="btn-round" style={{display: "flex", justifyContent: "space-between"}}*/}
+            {/*    onClick={() => setAskMode(true)}>*/}
+            {/*      <i className="fas fa-question"/>*/}
+            {/*      Ask*/}
+            {/*      <Badge pill>3</Badge>*/}
+            {/*    </Button>*/}
+            {/*    <Button color="secondary" block className="btn-round btn btn-outline-secondary" outline style={{display: "flex", justifyContent: "space-between"}}*/}
+            {/*            onClick={() => setAskMode(false)}>*/}
+            {/*      <i className="nc-icon nc-bulb-63"/>*/}
+            {/*      Answer*/}
+            {/*      <Badge pill>1</Badge>*/}
+            {/*      </Button>*/}
+            {/*  </div>*/}
+            {/*</Col>*/}
+            <Col lg={12} md={12} sm={12}>
+              <Row >
+                {askMode ? <Col lg={{size: 8, offset: 1}} md={{size: 8, offset: 1}} sm="12">
+                  <Card className="card-stats">
+                    <CardBody>
+                      <Row>
+                        <Col md="1" xs="1">
+                          <div className="avatar" style={{width: "50px", height: "50px"}}>
+                            <img
+                                alt="..."
+                                className="img-circle img-no-padding img-responsive"
+                                src={
+                                  require("assets/img/faces/ayo-ogunseinde-2.jpg")
+                                      .default
+                                }
+                            />
+                          </div>
+                        </Col>
+                        <Col md="11" xs="11">
+                          <form>
+                            <InputGroup>
+                              <Input placeholder="Ask a question..." />
+                              <InputGroupAddon addonType="append">
+                                <InputGroupText>
+                                  <i className="fas fa-pencil-alt" />
+                                </InputGroupText>
+                              </InputGroupAddon>
+                            </InputGroup>
+                          </form>
+                        </Col>
+                      </Row>
+                    </CardBody>
+                    <CardFooter style={{direction: "rtl"}}>
+                      <div className="stats" style={{display: "inline-block", margin: "20px"}}>
+                        Booking a Meeting
+                        <i className="fas fa-calendar-plus" />
+                      </div>
+                      <div className="stats" style={{display: "inline-block", margin: "20px"}}>
+                        Attachments
+                        <i className="fas fa-paperclip" />
+                      </div>
+                    </CardFooter>
+                  </Card>
+                </Col> : null }
+
+                <Col lg={{size: 8, offset: 1}} md={{size: 8, offset: 1}} sm="12">
+                  <Card>
+                    <CardHeader>
+                      <Dropdown
+                          isOpen={dropdownOpen}
+                          toggle={(e) => dropdownToggle(e)}
+                      >
+                        <DropdownToggle caret nav>
+                          Sort By
+                        </DropdownToggle>
+                        <DropdownMenu>
+                          <DropdownItem tag="a">Most Relevant</DropdownItem>
+                          <DropdownItem tag="a">Oldest</DropdownItem>
+                          <DropdownItem tag="a">Popular</DropdownItem>
+                        </DropdownMenu>
+                      </Dropdown>
+                    </CardHeader>
+                    <CardBody>
+                      <ul className="list-unstyled team-members">
+                        <li>
+                          {feedLoad()}
+                        </li>
+                      </ul>
+                    </CardBody>
+                  </Card>
+                </Col>
+
+              </Row>
+            </Col>
+          </Row>
+        </div>
+      </>
   );
 }
 

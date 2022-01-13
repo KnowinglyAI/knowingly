@@ -53,6 +53,12 @@ var routes = [
     icon: "nc-icon nc-chat-33",
     component: Typography,
     layout: "/admin",
+  }, {
+    path: "/meetings",
+    name: "Meetings",
+    icon: "nc-icon nc-tie-bow",
+    component: Icons,
+    layout: "/admin",
   },
   {
     pro: true,

@@ -133,7 +133,7 @@ function Header(props) {
           <span className="navbar-toggler-bar navbar-kebab" />
         </NavbarToggler>
         <Collapse isOpen={isOpen} navbar className="justify-content-end">
-          <form>
+          <form style={{width: "600px"}}>
             <InputGroup className="no-border">
               <Input placeholder="Search..." />
               <InputGroupAddon addonType="append">
@@ -144,16 +144,16 @@ function Header(props) {
             </InputGroup>
           </form>
           <Nav navbar>
-            <NavItem>
-              <Button
-                  className="btn-round"
-                  color="success"
-                  type="submit"
-                  onClick={() => handleAddClick()}
-              >
-                Ask
-              </Button>
-            </NavItem>
+            {/*<NavItem>*/}
+            {/*  <Button*/}
+            {/*      className="btn-round"*/}
+            {/*      color="success"*/}
+            {/*      type="submit"*/}
+            {/*      onClick={() => handleAddClick()}*/}
+            {/*  >*/}
+            {/*    Ask*/}
+            {/*  </Button>*/}
+            {/*</NavItem>*/}
             <NavItem>
               <Link to="#pablo" className="nav-link btn-rotate">
                 <div className="header-avatar avatar" style={{width: "40px", height: "40px"}}>
