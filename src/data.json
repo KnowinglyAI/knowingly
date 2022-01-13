@@ -1,0 +1,70 @@
+{
+  "othersQuestions": [
+    {
+      "userId": 5,
+      "firstName": "jone",
+      "lastName": "mac",
+      "title": "123456",
+      "text": "krish.lee@learningcontainer.com",
+      "time": "1d",
+      "tags": ["jquery","javascript"],
+      "photo": "joe-gardner-1.jpg"
+    },
+    {
+      "userId": 5,
+      "firstName": "jone",
+      "lastName": "mac",
+      "title": "Why is processing a sorted array faster than processing an unsorted array?",
+      "text": "My first thought was that sorting brings the data into the cache, but then I thought how silly that was because the array was just generated. What is going on? Why is processing a sorted array faster than processing an unsorted array? The code is summing up some independent terms, so the order should not matter.",
+      "time": "1d",
+      "tags": ["jquery","javascript"],
+      "photo": "joe-gardner-1.jpg"
+    },
+    {
+      "userId": 2,
+      "firstName": "racks",
+      "lastName": "jacson",
+      "title": "Why our company selected react as their FE framework?",
+      "text": "I have many reasons like the first second and last but none of the is the one I want to know",
+      "time": "1d",
+      "tags": ["jquery","javascript"],
+      "photo": "clem-onojeghuo-1.jpg"
+    },
+    {
+      "userId": 3,
+      "firstName": "denial",
+      "lastName": "roast",
+      "title": "Why earth is rounded?",
+      "text": "I wonder",
+      "time": "1d",
+      "tags": ["jquery","javascript"],
+      "photo": "erik-lucatero-1.jpg"
+    }
+  ],
+  "myQuestions": [
+    {
+      "userId": 1,
+      "firstName": "Krish",
+      "lastName": "Lee",
+      "title": "How can I parse through local JSON file in React js?",
+      "text": "How can I parse through a JSON file retrieving all its data and using it in my code?\n\nI've tried importing the file and just tried console logging it, but all it does is print Object {}:",
+      "time": "1d",
+      "tags": ["jquery","javascript"],
+      "photo": "ayo-ogunseinde-1.jpg"
+    },
+    {
+      "userId": 1,
+      "firstName": "Krish",
+      "lastName": "Lee",
+      "title": "How can I send an email from company mailbox?",
+      "text": "Fixing dead flat is a bit trickier but pairs of countersunk machine screws in the top deck with either aluminium plates and nuts forming a bridge under each rail you're attaching to, or the backing plates from the U-bolts I linked above, again with nuts.m",
+      "time": "1d",
+      "tags": [
+        "jquery",
+        "javascript"
+      ],
+      "photo": "ayo-ogunseinde-1.jpg"
+    }
+  ],
+  "notifications": ["Jone Mac answered your question", "Ali Khan requested a meeting", "We missed you!"]
+}
