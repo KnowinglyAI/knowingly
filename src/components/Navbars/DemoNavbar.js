@@ -40,6 +40,7 @@ import routes from "routes.js";
 
 
 function Header(props) {
+  let history = useHistory();
   const [isOpen, setIsOpen] = React.useState(false);
   const [dropdownOpen, setDropdownOpen] = React.useState(false);
   const [color, setColor] = React.useState("transparent");
@@ -56,9 +57,8 @@ function Header(props) {
   const dropdownToggle = (e) => {
     setDropdownOpen(!dropdownOpen);
   };
-  const history = useHistory();
-  const handleAddClick = () => {
-    window.location.href = window.location.origin +'/admin/notifications';
+  const handleProfileClick = () => {
+    history.push('/profile')
   };
 
   const getBrand = () => {
@@ -82,6 +82,9 @@ function Header(props) {
     } else {
       setColor("transparent");
     }
+  };
+  const logoutUser = () => {
+    localStorage.setItem('user', 'Abbas');
   };
   React.useEffect(() => {
     window.addEventListener("resize", updateColor.bind(this));
@@ -154,8 +157,39 @@ function Header(props) {
             {/*    Ask*/}
             {/*  </Button>*/}
             {/*</NavItem>*/}
-            <NavItem>
-              <Link to="#pablo" className="nav-link btn-rotate">
+            {/*<NavItem>*/}
+            {/*  <Link to="#pablo" className="nav-link btn-rotate">*/}
+            {/*    <div className="header-avatar avatar" style={{width: "40px", height: "40px"}}>*/}
+            {/*      <img*/}
+            {/*          alt="..."*/}
+            {/*          className="img-circle img-no-padding img-responsive" style={{borderRadius: "50%"}}*/}
+            {/*          src={*/}
+            {/*            require("assets/img/mike.jpg")*/}
+            {/*                .default*/}
+            {/*          }*/}
+            {/*      />*/}
+            {/*    </div>*/}
+            {/*  </Link>*/}
+            {/*</NavItem>*/}
+            {/*<NavItem>*/}
+            {/*  <Button*/}
+            {/*      className="btn-round btn-icon"*/}
+            {/*      color="danger"*/}
+            {/*      size="sm"*/}
+            {/*      onClick={() => {*/}
+            {/*        localStorage.setItem('user', 'Abbas');*/}
+            {/*        window.location.reload();*/}
+            {/*      }}*/}
+            {/*  >*/}
+            {/*    <i className="nc-icon nc-button-power" />*/}
+            {/*  </Button>*/}
+            {/*</NavItem>*/}
+            <Dropdown
+              nav
+              isOpen={dropdownOpen}
+              toggle={(e) => dropdownToggle(e)}
+            >
+              <DropdownToggle caret nav>
                 <div className="header-avatar avatar" style={{width: "40px", height: "40px"}}>
                   <img
                       alt="..."
@@ -166,33 +200,25 @@ function Header(props) {
                       }
                   />
                 </div>
-              </Link>
-            </NavItem>
-            {/*<NavItem>*/}
-            {/*  <Link to="#pablo" className="nav-link btn-magnify">*/}
-            {/*    <i className="nc-icon nc-layout-11" />*/}
-            {/*    <p>*/}
-            {/*      <span className="d-lg-none d-md-block">Stats</span>*/}
-            {/*    </p>*/}
-            {/*  </Link>*/}
-            {/*</NavItem>*/}
-            {/*<Dropdown*/}
-            {/*  nav*/}
-            {/*  isOpen={dropdownOpen}*/}
-            {/*  toggle={(e) => dropdownToggle(e)}*/}
-            {/*>*/}
-            {/*  <DropdownToggle caret nav>*/}
-            {/*    <i className="nc-icon nc-bell-55" />*/}
-            {/*    <p>*/}
-            {/*      <span className="d-lg-none d-md-block">Some Actions</span>*/}
-            {/*    </p>*/}
-            {/*  </DropdownToggle>*/}
-            {/*  <DropdownMenu right>*/}
-            {/*    <DropdownItem tag="a">Action</DropdownItem>*/}
-            {/*    <DropdownItem tag="a">Another Action</DropdownItem>*/}
-            {/*    <DropdownItem tag="a">Something else here</DropdownItem>*/}
-            {/*  </DropdownMenu>*/}
-            {/*</Dropdown>*/}
+              </DropdownToggle>
+              <DropdownMenu right>
+                <DropdownItem tag="a" href="">User Profile</DropdownItem>
+                <DropdownItem tag="a" >
+                  <Button
+                      className="btn-danger"
+                      color="danger"
+                      onClick={() => {
+                        localStorage.setItem('user', 'Abbas');
+                        window.location.reload();
+                      }}
+                  >
+                    <i className="nc-icon nc-button-power" />
+Logout
+                  </Button>
+               </DropdownItem>
+
+              </DropdownMenu>
+            </Dropdown>
             {/*<NavItem>*/}
             {/*  <Link to="#pablo" className="nav-link btn-rotate">*/}
             {/*    <i className="nc-icon nc-settings-gear-65" />*/}

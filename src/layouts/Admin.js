@@ -27,67 +27,104 @@ import Sidebar from "components/Sidebar/Sidebar.js";
 import FixedPlugin from "components/FixedPlugin/FixedPlugin.js";
 
 import routes from "routes.js";
+import logo from "logo-new.png";
+import {Col, Row} from "reactstrap";
 
-var ps;
 
 function Dashboard(props) {
-  const [backgroundColor, setBackgroundColor] = React.useState("black");
-  const [activeColor, setActiveColor] = React.useState("info");
-  const mainPanel = React.useRef();
-  const location = useLocation();
-  React.useEffect(() => {
-    if (navigator.platform.indexOf("Win") > -1) {
-      ps = new PerfectScrollbar(mainPanel.current);
-      document.body.classList.toggle("perfect-scrollbar-on");
-    }
-    return function cleanup() {
-      if (navigator.platform.indexOf("Win") > -1) {
-        ps.destroy();
-        document.body.classList.toggle("perfect-scrollbar-on");
-      }
+    const [backgroundColor, setBackgroundColor] = React.useState("black");
+    const [activeColor, setActiveColor] = React.useState("info");
+    const mainPanel = React.useRef();
+    const location = useLocation();
+    React.useEffect(() => {
+        if (navigator.platform.indexOf("Win") > -1) {
+            ps = new PerfectScrollbar(mainPanel.current);
+            document.body.classList.toggle("perfect-scrollbar-on");
+        }
+        return function cleanup() {
+            if (navigator.platform.indexOf("Win") > -1) {
+                ps.destroy();
+                document.body.classList.toggle("perfect-scrollbar-on");
+            }
+        };
+    });
+    React.useEffect(() => {
+        mainPanel.current.scrollTop = 0;
+        document.scrollingElement.scrollTop = 0;
+    }, [location]);
+    const handleActiveClick = (color) => {
+        setActiveColor(color);
     };
-  });
-  React.useEffect(() => {
-    mainPanel.current.scrollTop = 0;
-    document.scrollingElement.scrollTop = 0;
-  }, [location]);
-  const handleActiveClick = (color) => {
-    setActiveColor(color);
-  };
-  const handleBgClick = (color) => {
-    setBackgroundColor(color);
-  };
-  return (
-    <div className="wrapper">
-      <Sidebar
-        {...props}
-        routes={routes}
-        bgColor={backgroundColor}
-        activeColor={activeColor}
-      />
-      <div className="main-panel" ref={mainPanel}>
-        <DemoNavbar {...props} />
-        <Switch>
-          {routes.map((prop, key) => {
-            return (
-              <Route
-                path={prop.layout + prop.path}
-                component={prop.component}
-                key={key}
-              />
-            );
-          })}
-        </Switch>
-        <Footer fluid />
-      </div>
-      {/*<FixedPlugin*/}
-      {/*  bgColor={backgroundColor}*/}
-      {/*  activeColor={activeColor}*/}
-      {/*  handleActiveClick={handleActiveClick}*/}
-      {/*  handleBgClick={handleBgClick}*/}
-      {/*/>*/}
-    </div>
-  );
+    const handleBgClick = (color) => {
+        setBackgroundColor(color);
+    };
+    const submitClick = (e) => {
+        const formData = e.currentTarget.form;
+        localStorage.setItem('user',  formData[0].value)
+    }
+
+
+    const loginPage = <div>
+        <div className="main-panel" ref={mainPanel} style={{width: "100%", marginTop: "10%", backgroundColor: "white", overflow: "hidden", textAlign: "center"}}>
+            <Row>
+                <Col lg={{size: 4, offset: 4}} md={{size: 4, offset: 4}} sm="12">
+            <form className="form-signin" style={{width:"100%", maxWidth: "330px", padding: "15px", margin: "0 auto"}}>
+                <img className="mb-4" src={logo} alt="" width="72"
+                     height="72"/>
+                    <h1 className="h3 mb-3 font-weight-normal">Please sign in</h1>
+                    <label htmlFor="inputEmail" className="sr-only">Email address</label>
+                    <input type="text" id="inputEmail" className="form-control" placeholder="Email address"/>
+                        <label htmlFor="inputPassword" className="sr-only">Password</label>
+                        <input type="password" id="inputPassword" className="form-control" placeholder="Password"  required/>
+                            <div className="checkbox mb-3">
+                                <label>
+                                    <input type="checkbox" value="remember-me"/>  Remember me
+                                </label>
+                            </div>
+                            <button className="btn btn-lg btn-primary btn-block" type="submit" onClick={submitClick}>Sign in</button>
+                            <p className="mt-5 mb-3 text-muted">&copy; Knowingly</p>
+            </form>
+                </Col>
+            </Row>
+        </div>
+
+    </div>;
+    const userLogged = localStorage.getItem('user') && (localStorage.getItem('user') === 'Hanna' || localStorage.getItem('user') === 'Sara' ) ;
+    const homePage =   <div>
+        <Sidebar
+            {...props}
+            routes={routes}
+            bgColor={backgroundColor}
+            activeColor={activeColor}
+        />
+        <div className="main-panel" ref={mainPanel}>
+            <DemoNavbar {...props} />
+            <Switch>
+                {routes.map((prop, key) => {
+                    return (
+                        <Route
+                            path={prop.layout + prop.path}
+                            component={prop.component}
+                            key={key}
+                        />
+                    );
+                })}
+            </Switch>
+            <Footer fluid />
+        </div>
+        {/*<FixedPlugin*/}
+        {/*  bgColor={backgroundColor}*/}
+        {/*  activeColor={activeColor}*/}
+        {/*  handleActiveClick={handleActiveClick}*/}
+        {/*  handleBgClick={handleBgClick}*/}
+        {/*/>*/}</div>;
+    return (
+        <div className="wrapper">
+            {userLogged?homePage:loginPage}
+        </div>
+    );
 }
+
+var ps;
 
 export default Dashboard;

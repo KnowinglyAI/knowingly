@@ -80,8 +80,9 @@ function Dashboard() {
                 <Button
                     className="btn btn-light"
                     style={{backgroundColor: "#f8f9fa", borderColor: "#f8f9fa", color: "#212529"}}
-                >Like
-                  <i className="fa fa-thumbs-up" />
+                >  <i className="fa fa-thumbs-up" />
+                  Like
+
                 </Button>
                 <Button
                     className="btn btn-light"
@@ -91,14 +92,14 @@ function Dashboard() {
                 <Button
                     className="btn btn-light"
                     style={{backgroundColor: "#f8f9fa", borderColor: "#f8f9fa", color: "#212529"}}
-                >Refer
-                  <i className="fa fa-star" />
+                > <i className="fa fa-share" />
+                Refer
+
                 </Button>
 
                 <Button
                     className="btn btn-success"
                 >Answer
-                  <i className="nc-icon nc-check-2" />
                 </Button>
 
               </Row>
@@ -161,10 +162,10 @@ function Dashboard() {
                   </Row>
                 </CardBody>
                 <CardFooter style={{direction: "rtl"}}>
-                  <div className="stats" style={{display: "inline-block", margin: "20px"}}>
-                    Booking a Meeting
-                    <i className="fas fa-calendar-plus" />
-                  </div>
+                  {/*<div className="stats" style={{display: "inline-block", margin: "20px"}}>*/}
+                  {/*  Booking a Meeting*/}
+                  {/*  <i className="fas fa-calendar-plus" />*/}
+                  {/*</div>*/}
                   <div className="stats" style={{display: "inline-block", margin: "20px"}}>
                     Attachments
                     <i className="fas fa-paperclip" />

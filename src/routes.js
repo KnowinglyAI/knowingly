@@ -28,8 +28,8 @@ import UpgradeToPro from "views/Upgrade.js";
 var routes = [
   {
     path: "/dashboard",
-    name: "Dashboard",
-    icon: "nc-icon nc-support-17",
+    name: "Home",
+    icon: "nc-icon nc-shop",
     component: Dashboard,
     layout: "/admin",
   },
@@ -38,13 +38,6 @@ var routes = [
     name: "Notifications",
     icon: "nc-icon nc-bell-55",
     component: Notifications,
-    layout: "/admin",
-  },
-  {
-    path: "/user-page",
-    name: "User Profile",
-    icon: "nc-icon nc-single-02",
-    component: UserPage,
     layout: "/admin",
   },
   {
@@ -62,10 +55,10 @@ var routes = [
   },
   {
     pro: true,
-    path: "/new",
-    name: "Add new question",
-    icon: "nc-icon nc-spaceship",
-    component: UpgradeToPro,
+    path: "/user-page",
+    name: "Your Profile",
+    icon: "nc-icon nc-single-02",
+    component: UserPage,
     layout: "/admin",
   },
 ];
