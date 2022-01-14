@@ -34,9 +34,29 @@ import {
 } from "reactstrap";
 
 function User() {
+  const [inputText, setInputText] = React.useState('');
+  const [tags, setTags] = React.useState([]);
+  const handleChange = (event) => {
+    setInputText(event.target.value);
+  };
+  const pushToTags = () => {
+    tags.push(inputText);
+    setInputText('');
+  };
+  const tagsView = () => {
+    let views = [];
+    if (tags.length > 0) {
+
+      for (let tag of tags) {
+        views.push(<span style={{marginLeft: "8px"}} className="badge badge-info">{tag}</span>);
+      }
+    }
+    return views;
+  };
   return (
     <>
       <div className="content">
+
         <Row>
           <Col md="4">
             <Card className="card-user">
@@ -70,19 +90,19 @@ function User() {
                     <Col className="ml-auto" lg="3" md="6" xs="6">
                       <h5>
                         12 <br />
-                        <small>Files</small>
+                        <small>Answered</small>
                       </h5>
                     </Col>
                     <Col className="ml-auto mr-auto" lg="4" md="6" xs="6">
                       <h5>
-                        2GB <br />
-                        <small>Used</small>
+                        2 <br />
+                        <small>Asked</small>
                       </h5>
                     </Col>
                     <Col className="mr-auto" lg="3">
                       <h5>
-                        24,6$ <br />
-                        <small>Spent</small>
+                        2 <br />
+                        <small>Refers</small>
                       </h5>
                     </Col>
                   </Row>
@@ -113,6 +133,7 @@ function User() {
                       <FormGroup>
                         <label>Username</label>
                         <Input
+                            disabled
                           defaultValue="michael23"
                           placeholder="Username"
                           type="text"
@@ -122,9 +143,9 @@ function User() {
                     <Col className="pl-1" md="4">
                       <FormGroup>
                         <label htmlFor="exampleInputEmail1">
-                          Email address
+                          Calendly address for meetings
                         </label>
-                        <Input placeholder="Email" type="email" />
+                        <Input placeholder="https://calendly.com/user/15min" type="email" />
                       </FormGroup>
                     </Col>
                   </Row>
@@ -153,47 +174,7 @@ function User() {
                   <Row>
                     <Col md="12">
                       <FormGroup>
-                        <label>Address</label>
-                        <Input
-                          defaultValue="Melbourne, Australia"
-                          placeholder="Home Address"
-                          type="text"
-                        />
-                      </FormGroup>
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Col className="pr-1" md="4">
-                      <FormGroup>
-                        <label>City</label>
-                        <Input
-                          defaultValue="Melbourne"
-                          placeholder="City"
-                          type="text"
-                        />
-                      </FormGroup>
-                    </Col>
-                    <Col className="px-1" md="4">
-                      <FormGroup>
-                        <label>Country</label>
-                        <Input
-                          defaultValue="Australia"
-                          placeholder="Country"
-                          type="text"
-                        />
-                      </FormGroup>
-                    </Col>
-                    <Col className="pl-1" md="4">
-                      <FormGroup>
-                        <label>Postal Code</label>
-                        <Input placeholder="ZIP Code" type="number" />
-                      </FormGroup>
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Col md="12">
-                      <FormGroup>
-                        <label>About Me</label>
+                        <label>What I do</label>
                         <Input
                           type="textarea"
                           defaultValue="Oh so, your weak rhyme You doubt I'll bother, reading into it"
@@ -202,16 +183,50 @@ function User() {
                     </Col>
                   </Row>
                   <Row>
+                    <Col>
+                      <form className="form-inline">
+                        <div className="form-group mb-2">
+                          <label htmlFor="staticEmail2" className="sr-only">Email</label>
+                          <input type="text" readOnly className="form-control-plaintext" id="staticEmail2" value="I can help in:"/>
+                        </div>
+                        <div className="form-group mx-sm-3 mb-2">
+                          <label htmlFor="inputPassword2" className="sr-only">Password</label>
+                          <Input
+                              placeholder="Add as tags"
+                              type="text"
+                              value={inputText}
+                              onChange={handleChange}
+                          /> </div>
+                        <Button
+                            className="btn-round btn-icon"
+                            color="danger"
+                            outline
+                            size="sm"
+                            onClick={() => pushToTags()}
+                        >
+                          <i className="fa fa-plus" />
+                        </Button>{tagsView()}
+                      </form>
+
+                    </Col>
+
+                  </Row>
+                  <Row>
+
+                  </Row>
+                  <Row>
                     <div className="update ml-auto mr-auto">
                       <Button
                         className="btn-round"
                         color="primary"
                         type="submit"
+
                       >
                         Update Profile
                       </Button>
                     </div>
                   </Row>
+
                 </Form>
               </CardBody>
             </Card>

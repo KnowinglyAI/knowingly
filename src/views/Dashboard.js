@@ -42,6 +42,10 @@ function Dashboard() {
     let dataSource = data.othersQuestions;
     let questions = [];
     for (let question of dataSource) {
+      const tags = [];
+      for (let tag of question.tags) {
+        tags.push(<span style={{marginLeft: "8px"}} className="badge badge-pill badge-info">{tag}</span>);
+      }
       questions.push(
           <Card>
             <CardBody>
@@ -68,6 +72,9 @@ function Dashboard() {
                   <span className="text-muted">
                           <small>23 likes & 5 promotions</small>
                         </span>
+                  <Row>
+                    {tags}
+                  </Row>
                 </Col>
                 <Col className="text-right" md="3" xs="3">
                   <Button
@@ -107,6 +114,7 @@ function Dashboard() {
                 </Button>
 
               </Row>
+
             </CardBody>
           </Card>);
     }

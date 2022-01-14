@@ -53,7 +53,8 @@ function Dashboard(props) {
     }, [location]);
     const submitClick = (e) => {
         const formData = e.currentTarget.form;
-        localStorage.setItem('user',  formData[0].value)
+        localStorage.setItem('user',  formData[0].value);
+        window.location.href  = "https://knowinglyai.github.io/knowingly/";
     }
 
 

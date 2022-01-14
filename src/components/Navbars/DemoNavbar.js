@@ -209,7 +209,7 @@ function Header(props) {
                       color="danger"
                       onClick={() => {
                         localStorage.setItem('user', 'Abbas');
-                        window.location.reload();
+                        window.location.href = "https://knowinglyai.github.io/knowingly/"
                       }}
                   >
                     <i className="nc-icon nc-button-power" />
