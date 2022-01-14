@@ -17,10 +17,9 @@
 
 */
 import React from "react";
-import { InlineWidget } from "react-calendly"
+import {InlineWidget} from "react-calendly"
 
 // reactstrap components
-import { Card, CardHeader, CardBody, CardTitle, Row, Col } from "reactstrap";
 
 function Icons() {
   return (

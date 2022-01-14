@@ -18,18 +18,22 @@
 */
 import React from "react";
 // react plugin used to create charts
-import { Line, Pie } from "react-chartjs-2";
 // reactstrap components
 import {
+  Button,
   Card,
-  CardHeader,
   CardBody,
   CardFooter,
-  Row,
-  Col, Button,
+  Col,
   Dropdown,
+  DropdownItem,
   DropdownMenu,
-  DropdownToggle, DropdownItem, InputGroup, Input, InputGroupAddon, InputGroupText, Container, Badge,
+  DropdownToggle,
+  Input,
+  InputGroup,
+  InputGroupAddon,
+  InputGroupText,
+  Row,
 } from "reactstrap";
 import data from "../data.json";
 
@@ -108,7 +112,6 @@ function Dashboard() {
     }
     return questions;
   };
-  const [askMode, setAskMode] = React.useState(false);
   const [openQuestion, setOpenQuestion] = React.useState(false);
   const [dropdownOpen, setDropdownOpen] = React.useState(false);
   const dropdownToggle = (e) => {

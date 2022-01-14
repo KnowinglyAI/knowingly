@@ -17,30 +17,30 @@
 
 */
 import React from "react";
-import { Link, useLocation, useHistory } from "react-router-dom";
+import {useLocation} from "react-router-dom";
 import {
+  Button,
   Collapse,
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  Dropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
   Container,
+  Dropdown,
+  DropdownItem,
+  DropdownMenu,
+  DropdownToggle,
+  Input,
   InputGroup,
-  InputGroupText,
   InputGroupAddon,
-  Input, Button,
+  InputGroupText,
+  Nav,
+  Navbar,
+  NavbarBrand,
+  NavbarToggler,
 } from "reactstrap";
 
 import routes from "routes.js";
 
 
 function Header(props) {
-  let history = useHistory();
+  // let history = useHistory();
   const [isOpen, setIsOpen] = React.useState(false);
   const [dropdownOpen, setDropdownOpen] = React.useState(false);
   const [color, setColor] = React.useState("transparent");
@@ -57,9 +57,9 @@ function Header(props) {
   const dropdownToggle = (e) => {
     setDropdownOpen(!dropdownOpen);
   };
-  const handleProfileClick = () => {
-    history.push('/profile')
-  };
+  // const handleProfileClick = () => {
+  //   history.push('/profile')
+  // };
 
   const getBrand = () => {
     let brandName = "Default Brand";
@@ -83,9 +83,9 @@ function Header(props) {
       setColor("transparent");
     }
   };
-  const logoutUser = () => {
-    localStorage.setItem('user', 'Abbas');
-  };
+  // const logoutUser = () => {
+  //   localStorage.setItem('user', 'Abbas');
+  // };
   React.useEffect(() => {
     window.addEventListener("resize", updateColor.bind(this));
   });

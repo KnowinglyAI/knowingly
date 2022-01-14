@@ -17,11 +17,10 @@
 
 */
 import React from "react";
-import { NavLink } from "react-router-dom";
-import {Button, Nav, Row} from "reactstrap";
+import {NavLink} from "react-router-dom";
+import {Button, Nav} from "reactstrap";
 // javascript plugin used to create scrollbars on windows
 import PerfectScrollbar from "perfect-scrollbar";
-import logo from "klogo.png";
 
 var ps;
 
