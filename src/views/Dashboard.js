@@ -79,7 +79,7 @@ function Dashboard() {
                 <Col className="text-right" md="3" xs="3">
                   <Button
                       className="btn-round btn-icon"
-                      color="success"
+                      color="primary"
                       outline
                       size="sm"
                   >
@@ -109,7 +109,7 @@ function Dashboard() {
                 </Button>
 
                 <Button
-                    className="btn btn-success"
+                    className="btn btn-primary"
                 >Answer
                 </Button>
 
@@ -164,10 +164,16 @@ function Dashboard() {
                             </InputGroupText>
                           </InputGroupAddon>
                         </InputGroup>
+                       <div className="stats" style={{display: "inline-block", margin: "20px"}}>
+                         Attachments
+                         <i className="fas fa-paperclip" />
+                       </div>
+                       <Row>
                         <Button
-                            className="btn btn-success"
+                            className="btn btn-primary"
                         >Submit
                         </Button>
+                       </Row>
                       </form>
                     </Col>
                   </Row>
@@ -177,10 +183,7 @@ function Dashboard() {
                   {/*  Booking a Meeting*/}
                   {/*  <i className="fas fa-calendar-plus" />*/}
                   {/*</div>*/}
-                  <div className="stats" style={{display: "inline-block", margin: "20px"}}>
-                    Attachments
-                    <i className="fas fa-paperclip" />
-                  </div>
+
                   <div className="stats" style={{display: "inline-block", margin: "20px"}} onClick={() => setOpenQuestion(false)}>
                     <i className="nc-icon nc-minimal-up" />
                   </div>
@@ -214,14 +217,13 @@ function Dashboard() {
                             </InputGroupText>
                           </InputGroupAddon>
                         </InputGroup></form></Col></Row></CardBody></Card></Col></Row>}
-          <Row>
+          <Row style={{}}>
             <Col lg={6} md={6} sm={6}>
-              <div className="typography-line">
-                <i className="nc-icon nc-key-25" />
+              <div className="typography-line" style={{fontWeight: "700", fontSize: "larger", marginTop: "16px", paddingLeft: "20%"}}>
                 Questions for you
               </div>
             </Col>
-            <Col lg={{size: 2, offset: 2}} md={{size: 2, offset: 2}}>
+            <Col lg={{size: 1, offset: 1}} md={{size: 1, offset: 1}}>
                 <Dropdown
                     isOpen={dropdownOpen}
                     toggle={(e) => dropdownToggle(e)}

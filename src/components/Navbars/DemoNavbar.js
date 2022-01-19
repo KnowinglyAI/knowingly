@@ -103,7 +103,7 @@ function Header(props) {
     <Navbar
       color={
         props.location.pathname.indexOf("full-screen-maps") !== -1
-          ? "dark"
+          ? "white"
           : color
       }
       expand="lg"

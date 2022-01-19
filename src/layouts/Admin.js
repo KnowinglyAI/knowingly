@@ -31,7 +31,7 @@ import {Col, Row} from "reactstrap";
 
 
 function Dashboard(props) {
-    const [backgroundColor] = React.useState("black");
+    const [backgroundColor] = React.useState("white");
     const [activeColor] = React.useState("info");
     const mainPanel = React.useRef();
     const location = useLocation();
@@ -69,7 +69,7 @@ function Dashboard(props) {
                     <label htmlFor="inputEmail" className="sr-only">Email address</label>
                     <input type="text" id="inputEmail" className="form-control" placeholder="Email address"/>
                         <label htmlFor="inputPassword" className="sr-only">Password</label>
-                        <input type="password" id="inputPassword" className="form-control" placeholder="Password"  required/>
+                        <input type="password" id="inputPassword" className="form-control" placeholder="Password" />
                             <div className="checkbox mb-3">
                                 <label>
                                     <input type="checkbox" value="remember-me"/>  Remember me

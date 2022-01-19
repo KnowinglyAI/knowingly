@@ -52,8 +52,8 @@ function Sidebar(props) {
       <div className="logo">
         <Button
             size="lg"
-            className="btn btn-light"
-            color="success"
+            className="btn btn-primary"
+            color="primary"
         >Ask Question
           <i className="fa fa-pen" />
         </Button>
