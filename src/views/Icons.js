@@ -17,16 +17,23 @@
 
 */
 import React from "react";
-import {InlineWidget} from "react-calendly"
-
+import FullCalendar from '@fullcalendar/react' // must go before plugins
+import dayGridPlugin from '@fullcalendar/daygrid' // a plugin!
 // reactstrap components
 
 function Icons() {
   return (
     <>
-      <div className="content">
-       <InlineWidget url="https://calendly.com/kamalimaryam/15min"/>
-      </div>
+        <div className="content">
+            <FullCalendar
+                plugins={[ dayGridPlugin ]}
+                initialView="dayGridMonth"
+                events={[
+                    { title: '15 min meeting with Mahsa about An error in our app at the purchasing stage', date: '2022-01-06' },
+                    { title: '15 min meeting with Lee about When should you use a t-test vs a z-test?', date: '2022-01-16' }
+                ]}
+            />
+        </div>
     </>
   );
 }

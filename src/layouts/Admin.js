@@ -26,7 +26,7 @@ import Footer from "components/Footer/Footer.js";
 import Sidebar from "components/Sidebar/Sidebar.js";
 
 import routes from "routes.js";
-import logo from "klogo.png";
+import logo from "logo-new.png";
 import {Col, Row} from "reactstrap";
 
 
@@ -63,8 +63,9 @@ function Dashboard(props) {
             <Row>
                 <Col lg={{size: 4, offset: 4}} md={{size: 4, offset: 4}} sm="12">
             <form className="form-signin" style={{width:"100%", maxWidth: "330px", padding: "15px", margin: "0 auto"}}>
-                <img className="mb-4" src={logo} alt="" width="72"
-                     height="72"/>
+                <img className="mb-4" src={logo} alt="" width="172"
+                     height="172"/>
+                    <div className="h3 mb-3 font-weight-normal">Welcome to Knowingly!</div>
                     <h1 className="h3 mb-3 font-weight-normal">Please sign in</h1>
                     <label htmlFor="inputEmail" className="sr-only">Email address</label>
                     <input type="text" id="inputEmail" className="form-control" placeholder="Email address"/>
