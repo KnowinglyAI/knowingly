@@ -41,12 +41,15 @@ import {InlineWidget, PopupButton} from "react-calendly";
 function Dashboard() {
   const feedLoad = () => {
     let dataSource = data.othersQuestions;
+    if ("Mike" === localStorage.getItem('user')) {
+      dataSource[0] = data.sarasQuestion[0];
+    }
     if (exploreMore) {
       for (let i of data.myQuestions) {
         dataSource.push(i);
       }
     }
-    console.log(dataSource)
+
     let questions = [];
     for (let question of dataSource) {
       const tags = [];
@@ -72,7 +75,7 @@ function Dashboard() {
                 <Col md="7" xs="7">
                   <strong>{question.title}</strong> <br />
                   <span className="text-muted">
-                          <small>{question.time + " . by " + question.lastName}</small>
+                          <small>{question.time + " . by " + question.firstName + " " + question.lastName}</small>
                         </span> <br/>
                   <span>{question.text}</span>
                   <br />
@@ -133,8 +136,13 @@ function Dashboard() {
                   <PopoverBody>
                     <ButtonGroup>
                       <PopupButton className="btn btn-outline-primary" text="Book a Meeting" url="https://calendly.com/kamalimaryam/15min"/>
-                      <Button className="btn btn-outline-primary">Reply with Text</Button>
+                      <Button className="btn btn-outline-primary" onClick={() => setShowAnswerText(!showAnswerText)}>Reply with Text</Button>
                     </ButtonGroup>
+
+                    { showAnswerText ?<InputGroup>
+                      <textarea  placeholder="Type your initial answer here" className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                      {/*<Input placeholder="Type your initial answer here" />*/}
+                    </InputGroup> : null }
                   </PopoverBody>
                 </Popover>
               </Row>
@@ -151,8 +159,23 @@ function Dashboard() {
   const [answerPopoverOpen, setAnswerPopoverOpen] = React.useState(false);
   const [referPopoverOpen, setReferAnswerPopoverOpen] = React.useState(false);
   const [exploreMore, setExploreMore] = React.useState(false);
-  const [showBooking, setShowBooking] = React.useState(false);
-  // this.toggle = this.toggle.bind(this);
+  const [showAnswerText, setShowAnswerText] = React.useState(false);
+  const user = localStorage.getItem('user');
+  const userImage =  user === "Mike" ? <img
+      alt="..."
+      className="img-circle img-no-padding img-responsive" style={{borderRadius: "50%"}}
+      src={
+        require("assets/img/mike.jpg")
+            .default
+      }
+  /> :   <img
+      alt="..."
+      className="img-circle img-no-padding img-responsive" style={{borderRadius: "50%"}}
+      src={
+        require("assets/img/faces/eva.png")
+            .default
+      }
+  />;
   const handleChange = (event) => {
     setInputText(event.target.value);
   };
@@ -183,14 +206,7 @@ function Dashboard() {
                   <Row>
                     <Col md="1" xs="1">
                       <div className="avatar" style={{width: "50px", height: "50px"}}>
-                        <img
-                            alt="..."
-                            className="img-circle img-no-padding img-responsive"
-                            src={
-                              require("assets/img/faces/ayo-ogunseinde-2.jpg")
-                                  .default
-                            }
-                        />
+                        {userImage}
                       </div>
                     </Col>
                     <Col md="11" xs="11">
@@ -264,14 +280,7 @@ function Dashboard() {
                   <Row>
                     <Col md="1" xs="1">
                       <div className="avatar" style={{width: "50px", height: "50px"}}>
-                        <img
-                            alt="..."
-                            className="img-circle img-no-padding img-responsive"
-                            src={
-                              require("assets/img/mike.jpg")
-                                  .default
-                            }
-                        />
+                      {userImage}
                       </div>
                     </Col>
                     <Col md="11" xs="11">

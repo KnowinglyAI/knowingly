@@ -95,40 +95,25 @@ function Notifications() {
                         <CardTitle tag="h5">Notifications</CardTitle>
                       </CardHeader>
                       <CardBody>
-                        <Alert color="info">
-                          <span>someone commented</span>
+                        {"Sara" === localStorage.getItem('user') ? <div><Alert color="success">
+                          <span>Mike sent you a meeting request</span>
                         </Alert>
-                        <UncontrolledAlert color="info" fade={false}>
-                          <span>Ali Khan answered to your question</span>
-                        </UncontrolledAlert>
-                        <UncontrolledAlert
-                            className="alert-with-icon"
-                            color="info"
-                            fade={false}
-                        >
-                          <span
-                              data-notify="icon"
-                              className="nc-icon nc-bell-55"
-                          />
-                          <span data-notify="message">
-                            Something more complex from your feed is here
-                          </span>
-                        </UncontrolledAlert>
-                        <UncontrolledAlert
-                            className="alert-with-icon"
-                            color="info"
-                            fade={false}
-                        >
-                          <span
-                              data-notify="icon"
-                              className="nc-icon nc-chart-pie-36"
-                          />
-                          <span data-notify="message">
-                            This is a notification with close button and icon
-                            and have many lines. More complex notifications are here. So we don't have to
-                            worry about the style.
-                          </span>
-                        </UncontrolledAlert>
+                          <Alert color="success">
+                            <span>Mike sent you a new message</span>
+                          </Alert></div> : null}
+
+                        <Alert color="info">
+                          <span>Hanna sent you a new message</span>
+                        </Alert>
+                        <Alert color="info">
+                          <span>You have 3 questions waiting for you</span>
+                        </Alert>
+                        <Alert color="info">
+                          <span>Alan made a question</span>
+                        </Alert>
+                        <Alert color="info">
+                          <span>Mary sent you a meeting request</span>
+                        </Alert>
                       </CardBody>
                     </Card>
                   </Col>

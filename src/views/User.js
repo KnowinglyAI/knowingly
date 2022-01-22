@@ -36,6 +36,16 @@ import {
 function User() {
   const [inputText, setInputText] = React.useState('');
   const [tags, setTags] = React.useState([]);
+  const user = localStorage.getItem('user');
+  const userImage =  user === "Mike" ? <img
+      alt="..."
+      className="avatar border-gray"
+      src={require("assets/img/mike.jpg").default}
+  /> :  <img
+      alt="..."
+      className="avatar border-gray"
+      src={require("assets/img/faces/eva.png").default}
+  /> ;
   const handleChange = (event) => {
     setInputText(event.target.value);
   };
@@ -69,14 +79,10 @@ function User() {
               <CardBody>
                 <div className="author">
                   <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                    <img
-                      alt="..."
-                      className="avatar border-gray"
-                      src={require("assets/img/mike.jpg").default}
-                    />
-                    <h5 className="title">Chet Faker</h5>
+                   {userImage}
+                    <h5 className="title">{user === "Mike" ? "Mike Arats" : "Sara Leboiu"}</h5>
                   </a>
-                  <p className="description">@chetfaker</p>
+                  <p className="description">{user === "Mike" ? "@mikello" : "saravski"}</p>
                 </div>
                 <p className="description text-center">
                   "I like the way you work it <br />
@@ -134,7 +140,7 @@ function User() {
                         <label>Username</label>
                         <Input
                             disabled
-                          defaultValue="michael23"
+                          defaultValue={user === "Mike" ? "mikello" : "saravski"}
                           placeholder="Username"
                           type="text"
                         />
@@ -154,7 +160,7 @@ function User() {
                       <FormGroup>
                         <label>First Name</label>
                         <Input
-                          defaultValue="Chet"
+                          defaultValue={user === "Mike" ? "Mike" : "Sara"}
                           placeholder="Company"
                           type="text"
                         />
@@ -164,7 +170,7 @@ function User() {
                       <FormGroup>
                         <label>Last Name</label>
                         <Input
-                          defaultValue="Faker"
+                          defaultValue={user === "Mike" ? "Arats" : "Leboiu"}
                           placeholder="Last Name"
                           type="text"
                         />

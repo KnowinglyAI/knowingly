@@ -1,23 +1,32 @@
-{
-  "othersQuestions": [
+{ "users" : [ {
+  "username": "Sara",
+  "photo": "joe-gardner-1.jpg",
+  "tags": ["app","purchase","devOps"]
+},  {
+  "username": "Mike",
+  "photo": "/assets/img/mike.jpg",
+  "tags": ["app","purchase","devOps"]
+}],
+  "sarasQuestion": [
     {
       "userId": 5,
-      "firstName": "jone",
-      "lastName": "mac",
-      "title": "123456",
-      "text": "krish.lee@learningcontainer.com",
+      "firstName": "Sara",
+      "lastName": "Mac",
+      "title": "How to determine CI Engine combustion Characteristics through simulation?\n",
+      "text": "I have tried to simulate combustion in a Diesel engine with FLUENT, and I want to determine combustion characteristics in compression ignition engine and parameters such as in-cylinder pressure, temperature, heat release rate, NOx emission, UBHC, etc.I appreciate if someone help me find out following issue: How can I get detailed engine dimensions? How to incorporate crank angle and valve timing information to FLUENT (Not in ANSYS-IC engine module) Which models should activate to solve this problem in FLUENT? How to give motion to piston and lift of valve?",
       "time": "13min",
-      "tags": ["jquery","javascript"],
-      "photo": "ayo-ogunseinde-1.jpg"
-    },
+      "tags": ["enginedevelopement", "R&D", "Emmision", "FLUENT"],
+      "photo": "eva.png"
+    }
+  ],"othersQuestions": [
     {
       "userId": 5,
       "firstName": "jone",
-      "lastName": "mac",
+      "lastName": "mayu",
       "title": "Why is processing a sorted array faster than processing an unsorted array?",
       "text": "My first thought was that sorting brings the data into the cache, but then I thought how silly that was because the array was just generated. What is going on? Why is processing a sorted array faster than processing an unsorted array? The code is summing up some independent terms, so the order should not matter.",
       "time": "24min",
-      "tags": ["jquery","javascript"],
+      "tags": ["processing","array"],
       "photo": "ayo-ogunseinde-2.jpg"
     },
     {
@@ -27,15 +36,15 @@
       "title": "Why our company selected react as their FE framework?",
       "text": "I have many reasons like the first second and last but none of the is the one I want to know",
       "time": "40min",
-      "tags": ["jquery","javascript"],
-      "photo": "clem-onojeghuo-1.jpg"
+      "tags": ["culture","company"],
+      "photo": "jack.png"
     },
     {
       "userId": 3,
       "firstName": "denial",
       "lastName": "roast",
-      "title": "Why earth is rounded?",
-      "text": "I wonder",
+      "title": "In our app, we have automatic payment *after* payment due date: why?",
+      "text": "Why would the automatic payment be set to happen three days after the payment due date? Shouldn't it be on or before the due date? This makes me worry about possible penalties for late payment etc, though it would be surprising for the official system to have a flaw like this.any one knows?",
       "time": "45min",
       "tags": ["jquery","javascript"],
       "photo": "clem-onojeghuo-2.jpg"

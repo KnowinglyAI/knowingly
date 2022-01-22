@@ -34,6 +34,7 @@ import {
 } from "reactstrap";
 
 function Typography() {
+  const [openChatWithMike, setOpenChatWithMike] = React.useState(false);
   return (
     <>
       <div className="content">
@@ -69,6 +70,39 @@ function Typography() {
                               alt="..."
                               className="img-circle img-no-padding img-responsive"
                               src={
+                                require("assets/img/mike.jpg")
+                                    .default
+                              }
+                          />
+                        </div>
+                      </Col>
+                      <Col md="7" xs="7" >
+                        Mike Arats <br />
+                        <span className="text-muted">
+                          <small>How to determine CI Engine combustion Characteristics through simulation?</small>
+                        </span>
+                      </Col>
+                      <Col className="text-right" md="3" xs="3">
+                        <Button
+                            className="btn-round btn-icon"
+                            color="success"
+                            outline
+                            size="sm"
+                            onClick={() => setOpenChatWithMike(true)}
+                        >
+                          <i className="fa fa-envelope" />
+                        </Button>
+                      </Col>
+                    </Row>
+                  </li>
+                  <li>
+                    <Row>
+                      <Col md="2" xs="2">
+                        <div className="avatar">
+                          <img
+                              alt="..."
+                              className="img-circle img-no-padding img-responsive"
+                              src={
                                 require("assets/img/faces/ayo-ogunseinde-2.jpg")
                                     .default
                               }
@@ -82,42 +116,19 @@ function Typography() {
                         </span>
                       </Col>
                       <Col className="text-right" md="3" xs="3">
-
-                      </Col>
-                    </Row>
-                  </li>
-                  <li>
-                    <Row>
-                      <Col md="2" xs="2">
-                        <div className="avatar">
-                          <img
-                              alt="..."
-                              className="img-circle img-no-padding img-responsive"
-                              src={
-                                require("assets/img/mike.jpg")
-                                    .default
-                              }
-                          />
-                        </div>
-                      </Col>
-                      <Col md="7" xs="7">
-                        Creative Tim <br />
-                        <span className="text-muted">
-                          <small>How many bytes does a registery have in linux?</small>
-                        </span>
-                      </Col>
-                      <Col className="text-right" md="3" xs="3">
                         <Button
                             className="btn-round btn-icon"
-                            color="success"
+                            color="info"
                             outline
                             size="sm"
+                            onClick={() => setOpenChatWithMike(false)}
                         >
                           <i className="fa fa-envelope" />
                         </Button>
                       </Col>
                     </Row>
                   </li>
+
                   <li>
                     <Row>
                       <Col md="2" xs="2">
@@ -139,7 +150,15 @@ function Typography() {
                         </span>
                       </Col>
                       <Col className="text-right" md="3" xs="3">
-
+                        <Button
+                            className="btn-round btn-icon"
+                            color="info"
+                            outline
+                            size="sm"
+                            onClick={() => setOpenChatWithMike(false)}
+                        >
+                          <i className="fa fa-envelope" />
+                        </Button>
                       </Col>
                     </Row>
                   </li>
@@ -147,7 +166,7 @@ function Typography() {
               </CardBody>
             </Card>
           </Col>
-          <Col md={8}>
+          { !openChatWithMike ? <Col md={8}>
             <Card>
               <CardBody>
                 <Row style={{marginBottom: "24px"}}>
@@ -188,7 +207,7 @@ function Typography() {
                       alt="..."
                       className="img-circle img-no-padding img-responsive"
                       src={
-                        require("assets/img/mike.jpg")
+                        require("assets/img/faces/eva.png")
                             .default
                       }
                   />
@@ -239,7 +258,7 @@ function Typography() {
                     alt="..."
                     className="img-circle img-no-padding img-responsive"
                     src={
-                      require("assets/img/mike.jpg")
+                      require("assets/img/faces/eva.png")
                           .default
                     }
                 />
@@ -309,6 +328,69 @@ function Typography() {
               </Col>
             </Row>
           </Col>
+              : <Col md={8}>
+                <Card>
+                  <CardBody>
+                    <Row style={{marginBottom: "24px"}}>
+                      <Col md="2" xs="2">
+                        <div className="avatar" style={{borderRadius: 0, width: "45px", height: "45px"}}>
+                          <img
+                              alt="..."
+                              className="img-circle img-no-padding img-responsive"
+                              src={
+                                require("assets/img/faces/eva.png")
+                                    .default
+                              }
+                          />
+                        </div>
+                      </Col>
+                      <Col md="7" xs="7">
+                        <strong>How to determine CI Engine combustion Characteristics through simulation?</strong> <br />
+                        <span className="text-muted">
+                          <small>1d . by You</small>
+                        </span> <br/>
+                        <span>I have tried to simulate combustion in a Diesel engine with FLUENT, and I want to determine combustion characteristics in compression ignition engine and parameters such as in-cylinder pressure, temperature, heat release rate, NOx emission, UBHC, etc.I appreciate if someone help me find out following issue: How can I get detailed engine dimensions? How to incorporate crank angle and valve timing information to FLUENT (Not in ANSYS-IC engine module) Which models should activate to solve this problem in FLUENT? How to give motion to piston and lift of valve?</span>
+                        <br />
+                        <Row>
+                          <span style={{marginLeft: "8px"}} className="badge badge-pill badge-info">enginedevelopement</span>
+                          <span style={{marginLeft: "8px"}} className="badge badge-pill badge-info">R&D</span>
+                          <span style={{marginLeft: "8px"}} className="badge badge-pill badge-info">Emmision</span>
+                          <span style={{marginLeft: "8px"}} className="badge badge-pill badge-info">FLUENT</span>
+                        </Row>
+                      </Col>
+
+                    </Row>
+
+                  </CardBody>
+                </Card>
+                <Row>
+                  <Col md="1" xs="1">
+                    <div className="avatar" style={{borderRadius: 0, width: "45px", height: "45px"}}>
+                      <img
+                          alt="..."
+                          className="img-circle img-no-padding img-responsive"
+                          src={
+                            require("assets/img/mike.jpg")
+                                .default
+                          }
+                      />
+                    </div>
+                  </Col>
+                  <Col >
+                    <Card>
+                      <CardBody>
+                        I can help you out with this. Checkout your meetings.
+                      </CardBody>
+                      <CardFooter>
+                        <small> 12:30 pm</small>
+
+                      </CardFooter>
+                    </Card>
+
+                  </Col>
+
+                </Row>
+              </Col> }
         </Row>
       </div>
     </>

@@ -29,7 +29,7 @@ function Icons() {
                 plugins={[ dayGridPlugin ]}
                 initialView="dayGridMonth"
                 events={[
-                    { title: '15 min meeting with Mahsa about An error in our app at the purchasing stage', date: '2022-01-06' },
+                    { title: '15 min meeting with Sara about How to determine CI Engine combustion Characteristics through simulation?', date: '2022-01-06' },
                     { title: '15 min meeting with Lee about When should you use a t-test vs a z-test?', date: '2022-01-16' }
                 ]}
             />

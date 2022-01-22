@@ -84,16 +84,18 @@ function Dashboard(props) {
         </div>
 
     </div>;
-    const userLogged = localStorage.getItem('user') && (localStorage.getItem('user') === 'Hanna' || localStorage.getItem('user') === 'Sara' ) ;
+    const userLogged = localStorage.getItem('user') && (localStorage.getItem('user') === 'Sara' || localStorage.getItem('user') === 'Mike' ) ;
+    const user = userLogged ? localStorage.getItem('user') : null;
     const homePage =   <div>
         <Sidebar
             {...props}
             routes={routes}
             bgColor={backgroundColor}
             activeColor={activeColor}
+            user={user}
         />
         <div className="main-panel" ref={mainPanel}>
-            <DemoNavbar {...props} />
+            <DemoNavbar {...props} user={user} />
             <Switch>
                 {routes.map((prop, key) => {
                     return (
@@ -101,6 +103,7 @@ function Dashboard(props) {
                             path={prop.layout + prop.path}
                             component={prop.component}
                             key={key}
+                            user={user}
                         />
                     );
                 })}

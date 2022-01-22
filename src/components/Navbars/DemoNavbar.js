@@ -37,7 +37,7 @@ import {
 } from "reactstrap";
 
 import routes from "routes.js";
-
+import data from "data_new.json";
 
 function Header(props) {
   // let history = useHistory();
@@ -46,6 +46,30 @@ function Header(props) {
   const [color, setColor] = React.useState("transparent");
   const sidebarToggle = React.useRef();
   const location = useLocation();
+  const user = props.user;
+  const usersData = data.users;
+  const userImage =  user === "Mike" ? <img
+      alt="..."
+      className="img-circle img-no-padding img-responsive" style={{borderRadius: "50%"}}
+      src={
+        require("assets/img/mike.jpg")
+            .default
+      }
+  /> :   <img
+      alt="..."
+      className="img-circle img-no-padding img-responsive" style={{borderRadius: "50%"}}
+      src={
+        require("assets/img/faces/eva.png")
+            .default
+      }
+  />;
+  let userData = {};
+  for (let u of usersData) {
+    if (u.username === user) {
+      userData = u;
+    }
+  }
+  console.log(userData);
   const toggle = () => {
     if (isOpen) {
       setColor("transparent");
@@ -191,14 +215,7 @@ function Header(props) {
             >
               <DropdownToggle caret nav>
                 <div className="header-avatar avatar" style={{width: "40px", height: "40px"}}>
-                  <img
-                      alt="..."
-                      className="img-circle img-no-padding img-responsive" style={{borderRadius: "50%"}}
-                      src={
-                        require("assets/img/mike.jpg")
-                            .default
-                      }
-                  />
+                 {userImage}
                 </div>
               </DropdownToggle>
               <DropdownMenu right>
