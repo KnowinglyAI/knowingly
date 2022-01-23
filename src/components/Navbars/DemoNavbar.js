@@ -19,7 +19,7 @@
 import React from "react";
 import {useLocation} from "react-router-dom";
 import {
-  Button,
+  Button, Col,
   Collapse,
   Container,
   Dropdown,
@@ -33,7 +33,7 @@ import {
   Nav,
   Navbar,
   NavbarBrand,
-  NavbarToggler,
+  NavbarToggler, NavItem, Row,
 } from "reactstrap";
 
 import routes from "routes.js";
@@ -124,130 +124,30 @@ function Header(props) {
   }, [location]);
   return (
     // add or remove classes depending if we are on full-screen-maps page or not
-    <Navbar
-      color={
-        props.location.pathname.indexOf("full-screen-maps") !== -1
-          ? "white"
-          : color
-      }
-      expand="lg"
-      className={
-        props.location.pathname.indexOf("full-screen-maps") !== -1
-          ? "navbar-absolute fixed-top"
-          : "navbar-absolute fixed-top " +
-            (color === "transparent" ? "navbar-transparent " : "")
-      }
-    >
-      <Container fluid>
-        <div className="navbar-wrapper">
-          <div className="navbar-toggle">
-            <button
-              type="button"
-              ref={sidebarToggle}
-              className="navbar-toggler"
-              onClick={() => openSidebar()}
-            >
-              <span className="navbar-toggler-bar bar1" />
-              <span className="navbar-toggler-bar bar2" />
-              <span className="navbar-toggler-bar bar3" />
-            </button>
-          </div>
-          <NavbarBrand href="/">{getBrand()}</NavbarBrand>
-        </div>
-        <NavbarToggler onClick={toggle}>
-          <span className="navbar-toggler-bar navbar-kebab" />
-          <span className="navbar-toggler-bar navbar-kebab" />
-          <span className="navbar-toggler-bar navbar-kebab" />
-        </NavbarToggler>
-        <Collapse isOpen={isOpen} navbar className="justify-content-end">
-          <form style={{width: "600px"}}>
-            <InputGroup className="no-border">
-              <Input placeholder="Search..." />
-              <InputGroupAddon addonType="append">
-                <InputGroupText>
-                  <i className="nc-icon nc-zoom-split" />
-                </InputGroupText>
-              </InputGroupAddon>
-            </InputGroup>
-          </form>
-          <Nav navbar>
-            {/*<NavItem>*/}
-            {/*  <Button*/}
-            {/*      className="btn-round"*/}
-            {/*      color="success"*/}
-            {/*      type="submit"*/}
-            {/*      onClick={() => handleAddClick()}*/}
-            {/*  >*/}
-            {/*    Ask*/}
-            {/*  </Button>*/}
-            {/*</NavItem>*/}
-            {/*<NavItem>*/}
-            {/*  <Link to="#pablo" className="nav-link btn-rotate">*/}
-            {/*    <div className="header-avatar avatar" style={{width: "40px", height: "40px"}}>*/}
-            {/*      <img*/}
-            {/*          alt="..."*/}
-            {/*          className="img-circle img-no-padding img-responsive" style={{borderRadius: "50%"}}*/}
-            {/*          src={*/}
-            {/*            require("assets/img/mike.jpg")*/}
-            {/*                .default*/}
-            {/*          }*/}
-            {/*      />*/}
-            {/*    </div>*/}
-            {/*  </Link>*/}
-            {/*</NavItem>*/}
-            {/*<NavItem>*/}
-            {/*  <Button*/}
-            {/*      className="btn-round btn-icon"*/}
-            {/*      color="danger"*/}
-            {/*      size="sm"*/}
-            {/*      onClick={() => {*/}
-            {/*        localStorage.setItem('user', 'Abbas');*/}
-            {/*        window.location.reload();*/}
-            {/*      }}*/}
-            {/*  >*/}
-            {/*    <i className="nc-icon nc-button-power" />*/}
-            {/*  </Button>*/}
-            {/*</NavItem>*/}
-            <Dropdown
-              nav
-              isOpen={dropdownOpen}
-              toggle={(e) => dropdownToggle(e)}
-            >
-              <DropdownToggle caret nav>
-                <div className="header-avatar avatar" style={{width: "40px", height: "40px"}}>
-                 {userImage}
-                </div>
-              </DropdownToggle>
-              <DropdownMenu right>
-                <DropdownItem tag="a" href="">User Profile</DropdownItem>
-                <DropdownItem tag="a" >
-                  <Button
-                      className="btn-danger"
-                      color="danger"
-                      onClick={() => {
-                        localStorage.setItem('user', 'Abbas');
-                        window.location.href = "https://knowinglyai.github.io/knowingly/"
-                      }}
-                  >
-                    <i className="nc-icon nc-button-power" />
-Logout
-                  </Button>
-               </DropdownItem>
-
-              </DropdownMenu>
-            </Dropdown>
-            {/*<NavItem>*/}
-            {/*  <Link to="#pablo" className="nav-link btn-rotate">*/}
-            {/*    <i className="nc-icon nc-settings-gear-65" />*/}
-            {/*    <p>*/}
-            {/*      <span className="d-lg-none d-md-block">Account</span>*/}
-            {/*    </p>*/}
-            {/*  </Link>*/}
-            {/*</NavItem>*/}
-          </Nav>
-        </Collapse>
-      </Container>
-    </Navbar>
+      <Row style={{padding: "20px"}}>
+        <Col lg={{size: 8, offset: 1}} md={{size: 8, offset: 1}} sm="11">   <form >
+          <InputGroup className="no-border">
+            <Input placeholder="Search..." />
+            <InputGroupAddon addonType="append">
+              <InputGroupText>
+                <i className="nc-icon nc-zoom-split" />
+              </InputGroupText>
+            </InputGroupAddon>
+          </InputGroup>
+        </form></Col>
+        <Col lg={{size: 1, offset: 2}} md={{size: 1, offset: 2}} sm="1"> <Button
+            className="btn-round btn-icon"
+            color="info"
+            outline
+            size="sm"
+            onClick={() => {
+              localStorage.setItem('user', 'Abbas');
+              window.location.reload();
+            }}
+        >
+          <i className="nc-icon nc-button-power" />
+        </Button></Col>
+      </Row>
   );
 }
 

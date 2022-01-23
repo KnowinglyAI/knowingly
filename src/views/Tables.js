@@ -27,141 +27,189 @@ import {
   Table,
   Row,
   Col,
+  InputGroup,
+  Input,
+  InputGroupAddon,
+  InputGroupText,
+  Button,
+  CardFooter,
+  Popover,
+  PopoverHeader,
+  PopoverBody,
+  ButtonGroup,
 } from "reactstrap";
+import data from "../data_new";
+import {PopupButton} from "react-calendly";
 
 function Tables() {
+
+  const feedLoad = () => {
+    let dataSource = data.myAskedQuestions;
+    let name = "Sara Leboiu";
+    if ("Mike" === localStorage.getItem('user')) {
+      name = "Mike Arats"
+    }
+
+    let questions = [];
+    for (let question of dataSource) {
+      const tags = [];
+      for (let tag of question.tags) {
+        tags.push(<span style={{marginLeft: "8px"}} className="badge badge-pill badge-info">{tag}</span>);
+      }
+      questions.push(
+          <Card>
+            <CardBody>
+              <Row style={{marginBottom: "24px"}}>
+                <Col md="2" xs="2">
+                  <div className="avatar" style={{borderRadius: 0, width: "45px", height: "45px"}}>
+                    {userImage}
+                  </div>
+                </Col>
+                <Col md="7" xs="7">
+                  <strong>{question.title}</strong> <br />
+                  <span className="text-muted">
+                          <small>{question.time + " . by " + name}</small>
+                        </span> <br/>
+                  <span>{question.text}</span>
+                  <br />
+                  <span className="text-muted">
+                          <small>23 likes & 5 promotions</small>
+                        </span>
+                  <Row>
+                    {tags}
+                  </Row>
+                </Col>
+                <Col className="text-right" md="3" xs="3">
+                  <Button
+                      className="btn-round btn-icon"
+                      color="primary"
+                      outline
+                      size="sm"
+                  >
+                    <i className="fa fa-ellipsis-v" />
+                  </Button>
+                </Col>
+              </Row>
+
+
+            </CardBody>
+          </Card>);
+    }
+    return questions;
+  };
+  const [inputText, setInputText] = React.useState('');
+  const [tags, setTags] = React.useState([]);
+  const user = localStorage.getItem('user');
+  const userImage =  user === "Mike" ? <img
+      alt="..."
+      className="img-circle img-no-padding img-responsive" style={{borderRadius: "50%"}}
+      src={
+        require("assets/img/mike.jpg")
+            .default
+      }
+  /> :   <img
+      alt="..."
+      className="img-circle img-no-padding img-responsive" style={{borderRadius: "50%"}}
+      src={
+        require("assets/img/faces/eva.png")
+            .default
+      }
+  />;
+  const handleChange = (event) => {
+    setInputText(event.target.value);
+  };
+  const pushToTags = () => {
+    tags.push(inputText);
+    setInputText('');
+  };
+  const tagsView = () => {
+    let views = [];
+    if (tags.length > 0) {
+
+      for (let tag of tags) {
+        views.push(<span style={{marginLeft: "8px"}} className="badge badge-info">{tag}</span>);
+      }
+    }
+    return views;
+  };
   return (
     <>
       <div className="content">
         <Row>
-          <Col md="12">
-            <Card>
-              <CardHeader>
-                <CardTitle tag="h4">Simple Table</CardTitle>
-              </CardHeader>
+          <Col lg={{size: 8, offset: 1}} md={{size: 8, offset: 1}} sm="12">
+            <Card className="card-stats">
               <CardBody>
-                <Table responsive>
-                  <thead className="text-primary">
-                    <tr>
-                      <th>Name</th>
-                      <th>Country</th>
-                      <th>City</th>
-                      <th className="text-right">Salary</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>Dakota Rice</td>
-                      <td>Niger</td>
-                      <td>Oud-Turnhout</td>
-                      <td className="text-right">$36,738</td>
-                    </tr>
-                    <tr>
-                      <td>Minerva Hooper</td>
-                      <td>Curaçao</td>
-                      <td>Sinaai-Waas</td>
-                      <td className="text-right">$23,789</td>
-                    </tr>
-                    <tr>
-                      <td>Sage Rodriguez</td>
-                      <td>Netherlands</td>
-                      <td>Baileux</td>
-                      <td className="text-right">$56,142</td>
-                    </tr>
-                    <tr>
-                      <td>Philip Chaney</td>
-                      <td>Korea, South</td>
-                      <td>Overland Park</td>
-                      <td className="text-right">$38,735</td>
-                    </tr>
-                    <tr>
-                      <td>Doris Greene</td>
-                      <td>Malawi</td>
-                      <td>Feldkirchen in Kärnten</td>
-                      <td className="text-right">$63,542</td>
-                    </tr>
-                    <tr>
-                      <td>Mason Porter</td>
-                      <td>Chile</td>
-                      <td>Gloucester</td>
-                      <td className="text-right">$78,615</td>
-                    </tr>
-                    <tr>
-                      <td>Jon Porter</td>
-                      <td>Portugal</td>
-                      <td>Gloucester</td>
-                      <td className="text-right">$98,615</td>
-                    </tr>
-                  </tbody>
-                </Table>
+                <Row>
+                  <Col md="1" xs="1">
+                    <div className="avatar" style={{width: "50px", height: "50px"}}>
+                      {userImage}
+                    </div>
+                  </Col>
+                  <Col md="11" xs="11">
+                    <form>
+                      <InputGroup>
+                        <Input placeholder="Question Title" />
+                        <InputGroupAddon addonType="append">
+                          <InputGroupText>
+                            <i className="fas fa-pencil-alt" />
+                          </InputGroupText>
+                        </InputGroupAddon>
+                      </InputGroup>
+
+                      <InputGroup>
+                        <Input placeholder="Describe Your Question" />
+                        <InputGroupAddon addonType="append">
+                          <InputGroupText>
+
+                          </InputGroupText>
+                        </InputGroupAddon>
+                      </InputGroup>
+
+                      <form className="form-inline">
+                        <div className="form-group">
+                          <Input
+                              placeholder="Add tags"
+                              type="text"
+                              value={inputText}
+                              onChange={handleChange}
+                          /> </div>
+                        <Button
+                            className="btn-round btn-icon"
+                            color="success"
+                            outline
+                            size="sm"
+                            onClick={() => pushToTags()}
+                        >
+                          <i className="fa fa-plus" />
+                        </Button>{tagsView()}
+                      </form>
+                      <div className="stats" style={{display: "inline-block", margin: "20px"}}>
+                        Attachments
+                        <i className="fas fa-paperclip" />
+                      </div>
+                      <Row>
+                        <Button
+                            className="btn btn-primary" onClick={(e) => e.preventDefault()}
+                        >Submit
+                        </Button>
+                      </Row>
+                    </form>
+                  </Col>
+                </Row>
               </CardBody>
             </Card>
           </Col>
-          <Col md="12">
-            <Card className="card-plain">
-              <CardHeader>
-                <CardTitle tag="h4">Table on Plain Background</CardTitle>
-                <p className="card-category">
-                  Here is a subtitle for this table
-                </p>
-              </CardHeader>
-              <CardBody>
-                <Table responsive>
-                  <thead className="text-primary">
-                    <tr>
-                      <th>Name</th>
-                      <th>Country</th>
-                      <th>City</th>
-                      <th className="text-right">Salary</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>Dakota Rice</td>
-                      <td>Niger</td>
-                      <td>Oud-Turnhout</td>
-                      <td className="text-right">$36,738</td>
-                    </tr>
-                    <tr>
-                      <td>Minerva Hooper</td>
-                      <td>Curaçao</td>
-                      <td>Sinaai-Waas</td>
-                      <td className="text-right">$23,789</td>
-                    </tr>
-                    <tr>
-                      <td>Sage Rodriguez</td>
-                      <td>Netherlands</td>
-                      <td>Baileux</td>
-                      <td className="text-right">$56,142</td>
-                    </tr>
-                    <tr>
-                      <td>Philip Chaney</td>
-                      <td>Korea, South</td>
-                      <td>Overland Park</td>
-                      <td className="text-right">$38,735</td>
-                    </tr>
-                    <tr>
-                      <td>Doris Greene</td>
-                      <td>Malawi</td>
-                      <td>Feldkirchen in Kärnten</td>
-                      <td className="text-right">$63,542</td>
-                    </tr>
-                    <tr>
-                      <td>Mason Porter</td>
-                      <td>Chile</td>
-                      <td>Gloucester</td>
-                      <td className="text-right">$78,615</td>
-                    </tr>
-                    <tr>
-                      <td>Jon Porter</td>
-                      <td>Portugal</td>
-                      <td>Gloucester</td>
-                      <td className="text-right">$98,615</td>
-                    </tr>
-                  </tbody>
-                </Table>
-              </CardBody>
-            </Card>
+        </Row>
+        <Row>
+          <Col lg={12} md={12} sm={12}>
+            <Row >
+              <Col lg={{size: 8, offset: 1}} md={{size: 8, offset: 1}} sm="12">
+
+
+                {feedLoad()}
+              </Col>
+
+            </Row>
           </Col>
         </Row>
       </div>

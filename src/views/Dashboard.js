@@ -253,7 +253,7 @@ function Dashboard() {
                        </div>
                        <Row>
                         <Button
-                            className="btn btn-primary"
+                            className="btn btn-primary" onClick={(e) => e.preventDefault()}
                         >Submit
                         </Button>
                        </Row>

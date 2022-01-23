@@ -21,6 +21,7 @@ import Notifications from "views/Notifications.js";
 import Icons from "views/Icons.js";
 import Typography from "views/Typography.js";
 import UserPage from "views/User.js";
+import Tables from "./views/Tables";
 
 var routes = [
   {
@@ -48,6 +49,12 @@ var routes = [
     name: "Meetings",
     icon: "nc-icon nc-tie-bow",
     component: Icons,
+    layout: "/admin",
+  }, {
+    path: "/asknew",
+    name: "Ask New Question",
+    icon: "nc-icon nc-simple-add",
+    component: Tables,
     layout: "/admin",
   },
   {

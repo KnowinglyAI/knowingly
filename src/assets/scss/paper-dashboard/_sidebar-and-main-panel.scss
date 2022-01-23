@@ -96,6 +96,8 @@
             &.active > a,
             &.active > a > i {
               opacity: 1;
+              background-color: #f4f3ef;
+              color: black!important;
             }
 
             &:hover:not(.active) > a,
@@ -303,7 +305,7 @@
     > .content{
         padding: 0 30px 30px;
         min-height: calc(100vh - 123px);
-        margin-top: 110px;
+        margin-top: 30px;
     }
 
     > .navbar{

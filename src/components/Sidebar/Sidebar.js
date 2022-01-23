@@ -17,14 +17,32 @@
 
 */
 import React from "react";
-import {NavLink} from "react-router-dom";
-import {Button, Nav} from "reactstrap";
+import {NavLink, Route} from "react-router-dom";
+import {Button, Col, Nav, Row} from "reactstrap";
 // javascript plugin used to create scrollbars on windows
 import PerfectScrollbar from "perfect-scrollbar";
+import User from "../../views/User";
 
 var ps;
 
 function Sidebar(props) {
+  const user = localStorage.getItem('user');
+  const userImage =  user === "Mike" ? <img
+      alt="..."
+      className="img-circle img-no-padding img-responsive" style={{borderRadius: "50%"}}
+      src={
+        require("assets/img/mike.jpg")
+            .default
+      }
+  /> :   <img
+      alt="..."
+      className="img-circle img-no-padding img-responsive" style={{borderRadius: "50%"}}
+      src={
+        require("assets/img/faces/eva.png")
+            .default
+      }
+  />;
+  const name =  user === "Mike" ? "Mike Arats" : "Sara Leboiu";
   const sidebar = React.useRef();
   // verifies if routeName is the one active (in browser input)
   const activeRoute = (routeName) => {
@@ -49,14 +67,16 @@ function Sidebar(props) {
       data-color={props.bgColor}
       data-active-color={props.activeColor}
     >
+
       <div className="logo">
-        <Button
-            size="lg"
-            className="btn btn-primary"
-            color="primary"
-        >Ask Question
-          <i className="fa fa-pen" />
-        </Button>
+        <Row>
+        <Col md={4}>
+        {userImage}
+        </Col>
+        <Col md={6} style={{marginTop: "20px"}}>
+          <a href="/admin/user-page" >{name}</a>
+        </Col>
+        </Row>
       </div>
       <div className="sidebar-wrapper" ref={sidebar}>
         <Nav>

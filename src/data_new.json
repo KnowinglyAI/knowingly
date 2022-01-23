@@ -18,7 +18,8 @@
       "tags": ["enginedevelopement", "R&D", "Emmision", "FLUENT"],
       "photo": "eva.png"
     }
-  ],"othersQuestions": [
+  ],
+  "othersQuestions": [
     {
       "userId": 5,
       "firstName": "jone",
@@ -320,6 +321,28 @@
       "time": "4w",
       "tags": ["SPDF","Bigdata","economy"],
       "photo": "ayo-ogunseinde-2.jpg"
+    }
+  ],
+  "myAskedQuestions": [
+    {
+      "userId": 1,
+      "firstName": "Kevin",
+      "lastName": "Mihaan",
+      "title": "Difference between conventional VM and container based microservicess?",
+      "text": "What are the drawbacks of conventional VM over container based microservices. You may mention some bold points for further discussions. On the other hand in production server what kind of container engine mostly used i.e. docker, podman etc. and the host system operating system too.",
+      "time": "6h",
+      "tags": ["engine","developement"],
+      "photo": "kaci-baum-2.jpg"
+    },
+    {
+      "userId": 1,
+      "firstName": "Joshua",
+      "lastName": "Green",
+      "title": "Adaptive Input and Parameter Estimation with Application to Engine Torque Estimation ?",
+      "text": "What are the methods for estimating the engine torque other than the above",
+      "time": "7h",
+      "tags": ["jquery","javascript"],
+      "photo": "ayo-ogunseinde-1.jpg"
     }
   ],
   "notifications": ["Jone Mac answered your question", "Ali Khan requested a meeting", "We missed you!"]
