@@ -70,14 +70,6 @@ function Header(props) {
     }
   }
   console.log(userData);
-  const toggle = () => {
-    if (isOpen) {
-      setColor("transparent");
-    } else {
-      setColor("dark");
-    }
-    setIsOpen(!isOpen);
-  };
   const dropdownToggle = (e) => {
     setDropdownOpen(!dropdownOpen);
   };

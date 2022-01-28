@@ -18,7 +18,7 @@
 */
 import React from "react";
 import {NavLink, Route} from "react-router-dom";
-import {Button, Col, Nav, Row} from "reactstrap";
+import {Button, Col, Dropdown, DropdownItem, DropdownMenu, DropdownToggle, Nav, Row} from "reactstrap";
 // javascript plugin used to create scrollbars on windows
 import PerfectScrollbar from "perfect-scrollbar";
 import User from "../../views/User";
@@ -26,6 +26,7 @@ import User from "../../views/User";
 var ps;
 
 function Sidebar(props) {
+  const [dropdownOpen, setDropdownOpen] = React.useState(false);
   const user = localStorage.getItem('user');
   const userImage =  user === "Mike" ? <img
       alt="..."
@@ -61,6 +62,9 @@ function Sidebar(props) {
       }
     };
   });
+  const dropdownToggle = (e) => {
+    setDropdownOpen(!dropdownOpen);
+  };
   return (
     <div
       className="sidebar"
@@ -68,12 +72,36 @@ function Sidebar(props) {
       data-active-color={props.activeColor}
     >
 
-      <div className="logo">
+      <div className="logo" style={{zIndex: "5"}}>
         <Row>
         <Col md={4}>
-        {userImage}
+          <Dropdown
+              style={{listStyle: "none"}}
+              nav
+              isOpen={dropdownOpen}
+              toggle={(e) => dropdownToggle(e)}
+          >
+            <DropdownToggle caret nav>
+              <div className="header-avatar avatar" style={{width: "40px", height: "40px"}}>
+                {userImage}
+              </div>
+            </DropdownToggle>
+            <DropdownMenu>
+              <div className="list-group">
+                <button type="button" className="list-group-item list-group-item-action" onClick={() => window.location.href = "/admin/user-page"}>
+                  User Profile
+                </button>
+                <button type="button" className="btn-danger list-group-item list-group-item-action" onClick={() => {
+                  localStorage.setItem('user', 'Abbas');
+                  window.location.reload();
+                }}>Logout
+                </button>
+              </div>
+            </DropdownMenu>
+          </Dropdown>
         </Col>
         <Col md={6} style={{marginTop: "20px"}}>
+          <a>Welcome</a><br/>
           <a href="/admin/user-page" >{name}</a>
         </Col>
         </Row>
