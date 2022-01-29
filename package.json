@@ -2,7 +2,7 @@
   "name": "knowingly-app",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://knowinglyai.github.io/knowingly/",
+  "homepage": "https://knowingly-app.web.app",
   "dependencies": {
     "@babel/core": "7.14.2",
     "@fullcalendar/daygrid": "^5.10.1",
